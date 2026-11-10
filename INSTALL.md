@@ -2,11 +2,19 @@
 
 版本 **4.6.5** ｜ 覆盖房建 / 市政 / 道桥 / 铁路 / 机电 / 水利 / 工业等多类型工程
 
-> 本版（v4.6.4）**尚未进行**架构 / 软件 / 资深 QS 三视角独立验收，包内无 `ACCEPTANCE_REPORT_v4.6.4.md`；最近一份三方验收报告为 `ACCEPTANCE_REPORT_v4.6.1.md`。
-> v4.6.4 已完成的验证：`test_all.py` 默认 34/34、`--extended` 65/65、四组门禁自证 （G-OFF 12/12、G-RUN 7/7、Input 6/6、G-SRC 6/6）；**这些是回归层面的验证，不等于项目级端到端验证，也不等于三方专业验收。**
-> **v4.6.4 是独立第三方审核后的"自伤修复"版**：只修 v4.6.3 升级自身造成的 4 处回归
-> （冒烟常量未同步、守护用例同义反复、H 编号文档矛盾、验收报告断链）。
-> 审核发现的**设计级问题（致命 6 / 高 10）尚未整改**，清单见交付的审核包，需另行决策。
+> **本版 v4.6.5 = 独立第三方审核发现问题的全面整改版**：按整改计划 R1–R17 逐项落地，
+> 原审核的 6 条致命项已全部消除并复测（含审核方独立脚本 G-OFF 15/15、G-RUN 8/8）。
+> 逐项改动、HMAC 防护边界与未修清单见 `CHANGELOG.md` 的 **v4.6.5** 条目。
+>
+> 已完成的验证：`scripts/test_all.py` 发布闸 **34/34**（含 `SOURCE TREE UNCHANGED: True`）、
+> 四组门禁自证（G-OFF 42/42、G-RUN 14/14、G-SRC 19/19、Input Digest 15/15）、
+> 审核致命项重放 32/32。
+>
+> **边界（勿误解）**：包内最近一份独立验收报告仍是 `ACCEPTANCE_REPORT_v4.6.1.md`（历史版本）；
+> 本版做的是「审核发现整改 + 原审核方复测」，**不等于**架构 / 软件 / 资深 QS 三视角独立验收，
+> **也不等于**项目级端到端验证或专业签审——现有验证全部是构造夹具与回归自测。
+> 未修限制（落地性 / `PAIR-6C` 噪音 / 无真实项目 E2E / 法语状态码未核 NF P 02-001）
+> 见 `CHANGELOG.md` §八。
 
 ---
 
@@ -16,23 +24,28 @@
 
 | 系统 | 路径 |
 |---|---|
-| Windows | `C:\Users\<你的用户名>\.workbuddy\skills\` |
-| macOS / Linux | `~/.workbuddy/skills/` |
+| Windows | `C:\Users\<你的用户名>\.workbuddy-ai\skills\` |
+| macOS / Linux | `~/.workbuddy-ai/skills/` |
 
 放好后的结构应当是这样（**注意必须是 `skills/caogong-intl-qty/SKILL.md` 这一层**，不要多套一层目录）：
 
 ```
-.workbuddy/skills/
+.workbuddy-ai/skills/
 └── caogong-intl-qty/
     ├── SKILL.md
     ├── CHANGELOG.md
     ├── INSTALL.md
-    ├── references/   34 份参考文档
-    ├── scripts/      41 个脚本
+    ├── VERSION
+    ├── references/   36 份参考文档
+    ├── scripts/      48 个 Python 脚本
     └── assets/       模板、开项清单与 JSON Schema（道桥 + 房建）
 ```
 
-若只想当前项目用，放项目级目录 `{项目根}/.workbuddy/skills/` 亦可。
+若只想当前项目用，放项目级目录 `{项目根}/.workbuddy-ai/skills/` 亦可。
+
+> 旧版 WorkBuddy 曾使用 `.workbuddy/skills/`；以本机**实际生效**的技能目录为准。
+> 判断标准很简单：把包放进去后，`SKILL.md` 里 frontmatter 的 `name: caogong-intl-qty`
+> 能被自动触发加载，就说明路径对了。
 
 ---
 
@@ -190,7 +203,7 @@ v4.0.1 补登 B-32（上部结构标注类）/B-33（单模块洁具类型分列
 
 ## 历史：v4.6.0 的三方验收整改（架构 / 软件 / 资深 QS）
 
-> 本节记录的是 **v4.6.0** 那一轮三方验收的整改内容，不是 v4.6.4 的验收记录。
+> 本节记录的是 **v4.6.0** 那一轮三方验收的整改内容，不是 v4.6.5 的验收记录。
 
 v4.6.0 是一次大改，三方独立验收后修了 30 处问题，其中 6 类属"会用错"级别：
 
