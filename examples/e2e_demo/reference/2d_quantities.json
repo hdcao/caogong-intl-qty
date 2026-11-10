@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "name": "Roadway excavation",
+      "value": 1200.0,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Manual average-area chain calculation from section schedule D-01"
+    },
+    {
+      "name": "Granular subbase",
+      "value": 160.0,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Manual dimensions from typical section A-A, independent QS worksheet D-01"
+    },
+    {
+      "name": "Asphalt concrete",
+      "value": 35.0,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Manual layer area × thickness from section A-A, worksheet D-01"
+    },
+    {
+      "name": "Box culvert base slab concrete",
+      "value": 3.6,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Manual geometry from section B-B and dimension chain D-02"
+    },
+    {
+      "name": "Box culvert wall concrete",
+      "value": 3.6,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Manual wall count × dimensions from section B-B D-02"
+    },
+    {
+      "name": "Box culvert top slab concrete",
+      "value": 3.6,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Manual geometry from section B-B and dimension chain D-02"
+    },
+    {
+      "name": "Steel guardrail (optional alternative)",
+      "value": 200.0,
+      "unit": "m",
+      "kind": "quantity",
+      "param_source": "Manual both-side chainage count from plan D-01"
+    }
+  ]
+}

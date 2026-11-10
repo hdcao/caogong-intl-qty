@@ -1,0 +1,632 @@
+{
+  "report_schema_version": "1.1.0",
+  "run_type": "SYNTHETIC_END_TO_END_TEST_ONLY",
+  "started_at_utc": "2026-11-02T07:07:50+00:00",
+  "skill_version": "4.6.1",
+  "project_id": "SIM-E2E-001",
+  "project_name": "Synthetic Access Road & Box Culvert",
+  "overall_status": "PASS",
+  "test_steps_passed": 21,
+  "test_steps_total": 21,
+  "gate_status_counts": {
+    "PASS": 21,
+    "WARN": 0,
+    "FAIL": 0,
+    "ERROR": 0,
+    "NOT_RUN": 0,
+    "NOT_REPORTED": 0
+  },
+  "gate_contracts_written": 21,
+  "input_hashes_before": {
+    "examples\\e2e_demo\\input\\quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples\\e2e_demo\\input\\summary_control.xlsx": "7b568d63b372d88ae8eb318bb70a2283dfea78d49726b848e1f83761935898ce"
+  },
+  "input_hashes_after": {
+    "examples\\e2e_demo\\input\\quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples\\e2e_demo\\input\\summary_control.xlsx": "7b568d63b372d88ae8eb318bb70a2283dfea78d49726b848e1f83761935898ce"
+  },
+  "source_inputs_unchanged": true,
+  "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+  "source_tree_sha256_at_end": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+  "source_tree_unchanged": true,
+  "runtime": {
+    "python": "3.13.14",
+    "platform": "Windows-11-10.0.22000-SP0"
+  },
+  "limitations": [
+    "All drawings, quantities, rules, rates, codes, reviewer names and ACK records are invented test fixtures.",
+    "The 2D/model inputs are separate fixture files but their real-world source independence is not authenticated.",
+    "Cross-sheet comparison used --allow-hardcoded; it validates values, not formula dependency.",
+    "Baseline freshness test skipped file mtime because archive/copy timestamps are not reliable evidence.",
+    "PDF vector probe is diagnostic only; no claim that vector entities were automatically converted into quantities.",
+    "Drawing revision workflow compares register metadata and file hashes; it does not perform geometric overlay or recalculate affected quantities.",
+    "The test does not establish contract compliance, code compliance, market rates, authorized review, or payment certification."
+  ],
+  "steps": [
+    {
+      "name": "Environment preflight",
+      "command": [
+        "{python}",
+        "scripts/check_environment.py",
+        "--json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_environment_preflight.json",
+      "duration_seconds": 2.494,
+      "log": "examples/e2e_demo/reports/gate_logs/environment.json",
+      "output_tail": [
+        "      \"name\": \"数图元（数桩位/数支座这类问题）\",",
+        "      \"required\": false,",
+        "      \"status\": \"ready\",",
+        "      \"detail\": \"有 pymupdf 可直接读矢量坐标（推荐）\",",
+        "      \"fallback\": \"无 pymupdf 时改用 200~300dpi 渲染 + 裁切目视，但必须在交付说明里标注\\\"数量未经矢量法复核\\\"\"",
+        "    }",
+        "  ]",
+        "}"
+      ]
+    },
+    {
+      "name": "Compile and release smoke/regression suite",
+      "command": [
+        "{python}",
+        "scripts/test_all.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_compile_and_release_smoke_regression_suite.json",
+      "duration_seconds": 35.326,
+      "log": "examples/e2e_demo/reports/gate_logs/test_all.log",
+      "output_tail": [
+        "[OK] 合法行 0 误报（含量单位 kg/m³、文本长度词 1.05m、正当复述均未被指证）",
+        "结论: PASS",
+        "[PASS] exit=0 (2.9s)",
+        "SOURCE TREE SHA256: a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+        "SOURCE TREE UNCHANGED: True",
+        "",
+        "RELEASE SMOKE RESULT: 23/23 passed (suite=QTO-RELEASE-SMOKE-V12)",
+        "PASS: smoke/regression suite passed. This is not a substitute for project-specific end-to-end validation."
+      ]
+    },
+    {
+      "name": "Project manifest / measurement-rule / unit-alias preflight",
+      "command": [
+        "{python}",
+        "scripts/qto_project_validate.py",
+        "--manifest",
+        "examples/e2e_demo/reference/project_manifest.json",
+        "--project-root",
+        "examples/e2e_demo",
+        "--json-out",
+        "examples/e2e_demo/reports/project_config_validation.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_project_manifest_measurement_rule_unit_alias_preflight.json",
+      "duration_seconds": 1.793,
+      "log": "examples/e2e_demo/reports/gate_logs/project_config_validation.log",
+      "output_tail": [
+        "    \"release_eligible\": false,",
+        "    \"project_status\": \"SIMULATION_ONLY\",",
+        "    \"contract_approval\": \"SIMULATION_ONLY_NOT_AUTHORIZED\",",
+        "    \"drawing_status\": \"SIMULATION_ONLY\"",
+        "  },",
+        "  \"issues\": []",
+        "}",
+        "PROJECT CONFIG RESULT: PASS; release_eligible=False"
+      ]
+    },
+    {
+      "name": "Build drawing/input register",
+      "command": [
+        "{python}",
+        "scripts/build_input_register.py",
+        "build",
+        "--register",
+        "examples/e2e_demo/takeoff/register/scan/drawings_seed.csv",
+        "--scope",
+        "examples/e2e_demo/takeoff/register/scope.csv",
+        "--project",
+        "SIM-E2E-001",
+        "--out",
+        "examples/e2e_demo/takeoff/register/built",
+        "--rev-addendum",
+        "SIM-RD-CV-001 Rev.2 (synthetic)"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_build_drawing_input_register.json",
+      "duration_seconds": 4.41,
+      "log": "examples/e2e_demo/reports/gate_logs/input_register.log",
+      "output_tail": [
+        "建册 | CONFIRMED | 图纸 1 条 | 待确认 0 项（high 0）",
+        "  产出：.\\examples\\e2e_demo\\takeoff\\register\\built\\input_register.xlsx",
+        "  产出：.\\examples\\e2e_demo\\takeoff\\register\\built\\input_register.json",
+        "== 建册已确认：可进入算量 =="
+      ]
+    },
+    {
+      "name": "Drawing revision comparison and evidence-backed quantity impact closure",
+      "command": [
+        "{python}",
+        "scripts/drawing_revision_diff.py",
+        "compare",
+        "--baseline",
+        "examples/e2e_demo/reference/revisions/baseline.csv",
+        "--current",
+        "examples/e2e_demo/reference/revisions/current.csv",
+        "--impact-map",
+        "examples/e2e_demo/reference/revisions/impact_map.csv",
+        "--project-id",
+        "SIM-E2E-001",
+        "--out-dir",
+        "examples/e2e_demo/reports/revision_impact",
+        "--fail-on-unreviewed"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_drawing_revision_comparison_and_evidence_backed_quantity_impact_closure.json",
+      "duration_seconds": 1.386,
+      "log": "examples/e2e_demo/reports/gate_logs/drawing_revision_diff.log",
+      "output_tail": [
+        "Revision comparison: 4 sheet IDs; changed=2; unchanged=2",
+        "Impact mapping: CLOSED; blockers=0",
+        "JSON: .\\examples\\e2e_demo\\reports\\revision_impact\\drawing_revision_impact.json",
+        "Markdown: .\\examples\\e2e_demo\\reports\\revision_impact\\drawing_revision_impact.md",
+        "PASS: all changed drawing IDs have a closed, evidence-backed quantity-impact disposition."
+      ]
+    },
+    {
+      "name": "Structured scope declaration",
+      "command": [
+        "{python}",
+        "scripts/gate_scope_declaration.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_structured_scope_declaration.json",
+      "duration_seconds": 1.813,
+      "log": "examples/e2e_demo/reports/gate_logs/scope_declaration.log",
+      "output_tail": [
+        "口径声明门禁 | 表：quantity_takeoff.xlsx",
+        "数量行 7 条",
+        "[PASS] G-A 全部数量行均已声明口径",
+        "[PASS] G-B 单/全、单侧/两侧均成对",
+        "== 口径声明门禁通过 =="
+      ]
+    },
+    {
+      "name": "Drawing quantity baseline",
+      "command": [
+        "{python}",
+        "scripts/gate_drawing_basis.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--basis",
+        "examples/e2e_demo/reference/drawing_baseline.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_drawing_quantity_baseline.json",
+      "duration_seconds": 1.754,
+      "log": "examples/e2e_demo/reports/gate_logs/drawing_basis.log",
+      "output_tail": [
+        "图纸基准核对门禁 | 表：quantity_takeoff.xlsx | 基准 7 条（有效 7 条）",
+        "[PASS] G-B0 无模板占位，基准均为真实读数",
+        "[PASS] G-C 全部基准均写明图号出处",
+        "[PASS] G-E 全部量与基准相符",
+        "== 图纸基准核对门禁通过 =="
+      ]
+    },
+    {
+      "name": "Baseline freshness (mtime intentionally skipped for reproducible archive tests)",
+      "command": [
+        "{python}",
+        "scripts/gate_basis_freshness.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--basis",
+        "examples/e2e_demo/reference/basis_freshness.json",
+        "--skip-mtime"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_baseline_freshness_mtime_intentionally_skipped_for_reproducible_archive_tests.json",
+      "duration_seconds": 1.72,
+      "log": "examples/e2e_demo/reports/gate_logs/basis_freshness.log",
+      "output_tail": [
+        "基准时效门禁 G-FRESH | 表：quantity_takeoff.xlsx | 基准：basis_freshness.json",
+        "  图册版本 SIM-RD-CV-001 Rev.2 ｜ 基准复核 2026-10-24 16:30 ｜ 有效基准 7 条 / 数据行 7",
+        "[INFO] 基准覆盖率 100%（7/7 行）",
+        "== 基准时效门禁通过（WARN 项需人工确认）=="
+      ]
+    },
+    {
+      "name": "Base/optional separation",
+      "command": [
+        "{python}",
+        "scripts/gate_scope_options.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--no-fill",
+        "--summary",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--summary-cell",
+        "1_全项目成本汇总!C7"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_base_optional_separation.json",
+      "duration_seconds": 1.685,
+      "log": "examples/e2e_demo/reports/gate_logs/scope_options.log",
+      "output_tail": [
+        "基础方案直接费（不含 OPTIONS）           23859.00",
+        "OPTIONS（应单列，不计入基础）             17000.00",
+        "--------------------------------------------------------------------------",
+        "[PASS] G-P1 识别到 1 条 OPTIONS 行：",
+        "       r11   4.0            Steel guardrail (optional al       17000.00",
+        "[PASS] G-P3 汇总表 1_全项目成本汇总!C7 = 23859.00 = 基础方案实算",
+        "---",
+        "== 方案级口径分离门禁通过 =="
+      ]
+    },
+    {
+      "name": "Single physical object / single measurement owner",
+      "command": [
+        "{python}",
+        "scripts/gate_single_owner.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_single_physical_object_single_measurement_owner.json",
+      "duration_seconds": 1.646,
+      "log": "examples/e2e_demo/reports/gate_logs/single_owner.log",
+      "output_tail": [
+        "单实物单入口门禁 G-OWN | 表：quantity_takeoff.xlsx | 数据行 7",
+        "[INFO] 未发现重复计量入口（同码 7 个，CPB×单位组 2 组）",
+        "[PASS] G-OWN1/2 未发现\"同码汇总行+明细行并存\"或\"同码同名重复\"",
+        "[PASS] G-OWN3/4 未发现共用部位计数或整倍数嫌疑",
+        "== 单实物单入口门禁通过（WARN 项需人工确认）=="
+      ]
+    },
+    {
+      "name": "Unit/rate outlier check with explicit synthetic ACK and project unit registry",
+      "command": [
+        "{python}",
+        "scripts/gate_unit_consistency.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--ack",
+        "examples/e2e_demo/reference/ack_rate_outliers.csv",
+        "--unit-registry",
+        "examples/e2e_demo/reference/unit_alias_registry.json",
+        "--project-id",
+        "SIM-E2E-001"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_unit_rate_outlier_check_with_explicit_synthetic_ack_and_project_unit_registry.json",
+      "duration_seconds": 1.662,
+      "log": "examples/e2e_demo/reports/gate_logs/unit_consistency.log",
+      "output_tail": [
+        "",
+        "[PASS] G-U2 本次 2 行整档偏离**全部已有 ack 结论**，无新增",
+        "---",
+        "【本门禁的定位与局限，务必知道】",
+        "· 它是**WARN 不是 FAIL**：离群可能是特殊材料，也可能是量纲错，机器不该替人判。它的作用是让你看见这一档。",
+        "· **量的绝对大小无法用于判断量纲**：小构件与大构件天然差几个数量级，实测据此判会误报（湿接缝 31 m³ vs 承台 14582 m³）。",
+        "· 它**替代不了模型×二维交叉复核**：量纲问题要在两侧同源比对时才暴露得出来——单看一张表永远分不清\"贵\"与\"错\"。",
+        "== 单位门禁结束 =="
+      ]
+    },
+    {
+      "name": "Dimension-wording consistency",
+      "command": [
+        "{python}",
+        "scripts/gate_dimension_wording.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--code-col",
+        "2",
+        "--name-col",
+        "3",
+        "--unit-col",
+        "4",
+        "--value-col",
+        "5",
+        "--basis-col",
+        "12",
+        "--scope-col",
+        "9",
+        "--evidence-col",
+        "10",
+        "--formula-col",
+        "6",
+        "--rfi-col",
+        "17",
+        "--no-auto-map",
+        "--unit-registry",
+        "examples/e2e_demo/reference/unit_alias_registry.json",
+        "--project-id",
+        "SIM-E2E-001"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_dimension_wording_consistency.json",
+      "duration_seconds": 1.64,
+      "log": "examples/e2e_demo/reports/gate_logs/dimension_wording.log",
+      "output_tail": [
+        "==============================================================================",
+        "G-DW 量纲—单位—口径词自洽门禁",
+        "==============================================================================",
+        "[OK] 无问题",
+        "------------------------------------------------------------------------------",
+        "扫描 CBS- 行 = 7   FAIL = 0   WARN = 0",
+        "量纲校验覆盖：已校验 7 行 / 未校验 0 行"
+      ]
+    },
+    {
+      "name": "Per-item expected quantity closure",
+      "command": [
+        "{python}",
+        "scripts/gate_expected_total.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--expect",
+        "examples/e2e_demo/reference/expectations.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_per_item_expected_quantity_closure.json",
+      "duration_seconds": 1.609,
+      "log": "examples/e2e_demo/reports/gate_logs/expected_total.log",
+      "output_tail": [
+        "       备注：Synthetic owner/reference schedule, not a real owner BOQ",
+        "[PASS] EXP-CBS-CV-006「Box culvert top slab concrete」m3 期望 3.6 实算 3.6000 差 +0.00%（容差 0.5%，匹配 1 行）",
+        "       备注：Synthetic owner/reference schedule, not a real owner BOQ",
+        "[PASS] EXP-CBS-OPT-001「Steel guardrail」m 期望 200.0 实算 200.0000 差 +0.00%（容差 0.5%，匹配 1 行）",
+        "       备注：Synthetic owner/reference schedule, not a real owner BOQ",
+        "--------------------------------------------------------------------------",
+        "已扫 7 项期望：FAIL 0 / WARN 未清 0",
+        "[PASS] 全部期望项落在容差内。"
+      ]
+    },
+    {
+      "name": "Spreadsheet formula and subtotal integrity",
+      "command": [
+        "{python}",
+        "scripts/gate_sheet_formula.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_spreadsheet_formula_and_subtotal_integrity.json",
+      "duration_seconds": 1.558,
+      "log": "examples/e2e_demo/reports/gate_logs/sheet_formula.log",
+      "output_tail": [
+        "公式对齐门禁 | 表：quantity_takeoff.xlsx | ★合计行 r10",
+        "[PASS] G-1 全部公式指向所在行",
+        "[PASS] G-2/3 合计引用覆盖完整 | =SUM(H3:H8)；量行 6 条（r3~r8），区间外 0 条",
+        "[INFO] 发现小计行 1 个：r10",
+        "[INFO] H10 覆盖本组 r3~r8 ✓",
+        "[PASS] G-SUB 全部小计区间与本组有效量行一致",
+        "== 公式对齐门禁通过 =="
+      ]
+    },
+    {
+      "name": "Cross-sheet value reconciliation (hardcoded values explicitly allowed)",
+      "command": [
+        "{python}",
+        "scripts/gate_cross_sheet.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--map",
+        "examples/e2e_demo/reference/cross_sheet_map.json",
+        "--allow-hardcoded"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_cross_sheet_value_reconciliation_hardcoded_values_explicitly_allowed.json",
+      "duration_seconds": 1.837,
+      "log": "examples/e2e_demo/reports/gate_logs/cross_sheet.log",
+      "output_tail": [
+        "[PASS] G-XS3 CBS-CV-004：两侧一致 3.60",
+        "[PASS] G-XS3 CBS-CV-005：两侧一致 3.60",
+        "[PASS] G-XS3 CBS-CV-006：两侧一致 3.60",
+        "[PASS] G-XS3 CBS-OPT-001：两侧一致 200.00",
+        "[PASS] G-XSC3 映射覆盖全部 7 个编码（exclude 0 个）",
+        "——",
+        "一致 8 / 共 8 项；硬写死格 14 个",
+        "== 跨表一致性门禁通过 =="
+      ]
+    },
+    {
+      "name": "BOQ schema/content lint",
+      "command": [
+        "{python}",
+        "scripts/boq_lint.py",
+        "check",
+        "--boq",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--out",
+        "examples/e2e_demo/reports/boq_lint.json",
+        "--md",
+        "examples/e2e_demo/reports/boq_lint.md"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_boq_schema_content_lint.json",
+      "duration_seconds": 1.998,
+      "log": "examples/e2e_demo/reports/gate_logs/boq_lint.log",
+      "output_tail": [
+        "  value      5      工程量                                工程量",
+        "------------------------------------------------------------------------------",
+        "==============================================================================",
+        "BOQ LINT  quantity_takeoff.xlsx [1_成本取量总表]",
+        "==============================================================================",
+        "clean",
+        "------------------------------------------------------------------------------",
+        "FAIL=0  WARN=0  INFO=0"
+      ]
+    },
+    {
+      "name": "Model-vs-2D quantity comparison",
+      "command": [
+        "{python}",
+        "scripts/xcheck_model_vs_2d.py",
+        "examples/e2e_demo/reference/model_quantities.json",
+        "examples/e2e_demo/reference/2d_quantities.json",
+        "--stage",
+        "all",
+        "--report",
+        "examples/e2e_demo/reports/model_vs_2d.md"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_model_vs_2d_quantity_comparison.json",
+      "duration_seconds": 1.462,
+      "log": "examples/e2e_demo/reports/gate_logs/model_2d.log",
+      "output_tail": [
+        "[PASS] G-E2 二维侧条目全部在模型侧有对应",
+        "",
+        "── 第二步：数值比对 ──",
+        "EXACT 7 ｜ MINOR 0 ｜ MAJOR 0 ｜ NOT_COMPARABLE 0 ｜ 已排除 LOT 0",
+        "",
+        "报告已写：.\\examples\\e2e_demo\\reports\\model_vs_2d.md",
+        "",
+        "== 交叉复核通过 =="
+      ]
+    },
+    {
+      "name": "OpenBIM IFC QTO extraction / governed BOQ mapping / delivery profile / snapshot diff",
+      "command": [
+        "{python}",
+        "examples/e2e_demo/run_openbim_demo.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_openbim_ifc_qto_extraction_governed_boq_mapping_delivery_profile_snapshot_diff.json",
+      "duration_seconds": 9.476,
+      "log": "examples/e2e_demo/reports/gate_logs/openbim_workflow.log",
+      "output_tail": [
+        "OPENBIM E2E RESULT: PASS | subcommands=7/7 | assertions=5/5",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\REPORT.md"
+      ]
+    },
+    {
+      "name": "PDF vector/text layer inventory",
+      "command": [
+        "{python}",
+        "scripts/extract_dwg_vector.py",
+        "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf",
+        "--list"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_pdf_vector_text_layer_inventory.json",
+      "duration_seconds": 1.404,
+      "log": "examples/e2e_demo/reports/gate_logs/pdf_vector.log",
+      "output_tail": [
+        "文件：RD123456-SIM-RD-CV-001-REV2.pdf   页数：1",
+        "页    图幅(pt)         文字数      字体       图片         图元       判型",
+        "1    1191x842       1015     2        0          —        有文字层→先走文本层",
+        "",
+        "读法：文字数>0 且图元很多 → 文本层打底 + 图元补缺口（不要二选一）；",
+        "      文字数=0 而图元上千 → 文字转曲，走矢量取证；提高渲染倍数或反复 OCR 都救不回来。",
+        "      --count 可同时数图元（慢，每页可达十几秒）。"
+      ]
+    },
+    {
+      "name": "PDF vector forensic probe",
+      "command": [
+        "{python}",
+        "scripts/vector_forensics.py",
+        "probe",
+        "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf",
+        "--out",
+        "examples/e2e_demo/reports/vector_probe.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_pdf_vector_forensic_probe.json",
+      "duration_seconds": 1.477,
+      "log": "examples/e2e_demo/reports/gate_logs/vector_forensics.log",
+      "output_tail": [
+        "warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.",
+        "==============================================================================",
+        "p1   1190.6x841.9 pt  rot=0  text=1015  fonts=2  drawings=22  -> vector_with_text (完整文字层)",
+        "   route  文本层解析（最快最准）",
+        "   size   1133.9x785.2:1, 496.1x39.7:1, 158.7x102.0:1, 134.9x78.2:1, 354.3x70.9:1, 623.6x45.4:1",
+        "   angle  90deg:11, 0deg:5"
+      ]
+    },
+    {
+      "name": "Fault injection: ten injected defects must be caught; source files must remain unchanged",
+      "command": [
+        "{python}",
+        "scripts/gate_fault_injection.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--allow-subprocess",
+        "--xs-map",
+        "examples/e2e_demo/reference/cross_sheet_map.json",
+        "--summary",
+        "examples/e2e_demo/input/summary_control.xlsx",
+        "--basis",
+        "examples/e2e_demo/reference/drawing_baseline.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "gate_status": "PASS",
+      "gate_contract": "examples/e2e_demo/reports/gate_contracts/e2e_fault_injection_ten_injected_defects_must_be_caught_source_files_must_remain_unc.json",
+      "duration_seconds": 18.99,
+      "log": "examples/e2e_demo/reports/gate_logs/fault_injection.log",
+      "output_tail": [
+        "分组小计 SUM 区间漏末行               CAUGHT   r10 小计区间 =SUM(H3:H8) → 漏 r8；门禁证据：exit 1 + 明确失败判据：!! 未通过：逐行金额",
+        "同一实物复制成第二个计量入口               CAUGHT   r3 → 复制到 r13（CBS-RD-001 出现两次）；门禁证据：exit 1 + 明确失败判据：!! 未通过：同一",
+        "基准过期（表比基准新）                  CAUGHT   verified_at → 2001-01-01（表比基准新）；门禁证据：exit 1 + 明确失败判据：!! 未通过：",
+        "",
+        "原文件摘要 d113d0ed2b29 → d113d0ed2b29  一字未改 ✓",
+        "捕获率 10/10（分母=成功注入的用例数；「未注入」「跳过」不计入——它们不说明门禁强弱）",
+        "用例覆盖 10/10 —— 分母缩水说明这张表只支持部分注入，剩下的判据并未被验证。",
+        "== 门禁自证通过：每个成功注入的缺陷都被抓住了 =="
+      ]
+    }
+  ]
+}

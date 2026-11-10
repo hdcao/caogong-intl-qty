@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "rules": [
+    {
+      "rule_id": "RULE-TO-BE-ASSIGNED",
+      "title": "TO_BE_DEFINED",
+      "discipline": "TO_BE_CONFIRMED",
+      "jurisdiction": "TO_BE_CONFIRMED",
+      "source_document": "TO_BE_CONFIRMED",
+      "source_revision": "TO_BE_CONFIRMED",
+      "contract_clause": null,
+      "effective_from": null,
+      "effective_to": null,
+      "measurement_basis": "TO_BE_CONFIRMED",
+      "unit": "TO_BE_CONFIRMED",
+      "inclusion_rules": [],
+      "exclusion_rules": [],
+      "deduction_rules": [],
+      "rounding_policy": "TO_BE_CONFIRMED",
+      "precedence_rank": null,
+      "approval_status": "DRAFT",
+      "approved_by": null,
+      "approved_at": null,
+      "test_case_ids": [],
+      "notes": "Template only; do not use for project calculation until confirmed and approved."
+    }
+  ]
+}

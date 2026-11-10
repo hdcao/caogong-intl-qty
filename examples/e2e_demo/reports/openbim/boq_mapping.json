@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "tool": "boq_mapping",
+  "project_id": "SIM-E2E-OPENBIM-001",
+  "status": "PASS",
+  "release_eligible": true,
+  "source_hashes": {
+    "qto": "c056a9e11bd729bef4cc81bcfea263e5ed7748b8ab3add2122a64507957dab45",
+    "mapping_registry": "6c514e4852f20876449b925433bb901ae8e468dbcfca89782e697d86b6bb23ac",
+    "source_ifc": "fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4"
+  },
+  "source_ifc_reverified": true,
+  "metrics": {
+    "source_quantities": 3,
+    "valid_quantity_rows": 3,
+    "mapped_quantities": 2,
+    "approved_exclusions": 1,
+    "unmapped_or_invalid": 0,
+    "unmapped_quantities": 0,
+    "invalid_quantities": 0,
+    "invalid_quantity_rows": 0,
+    "boq_rows": 1,
+    "failures": 0,
+    "warnings": 0
+  },
+  "boq_summary": [
+    {
+      "boq_code": "C-001",
+      "description": "Concrete wall volume",
+      "unit": "m3",
+      "quantity": "15.5",
+      "source_count": 2,
+      "source_elements": [
+        "1123456789012345678901",
+        "4123456789012345678901"
+      ]
+    }
+  ],
+  "dispositions": [
+    {
+      "source_key": "1123456789012345678901|Qto_WallBaseQuantities|GrossVolume",
+      "disposition": "APPROVED_EXCLUSION",
+      "exclusion_rule_id": "EX-WALL-GROSS",
+      "reason": "Gross volume is retained for reference but is not a billable quantity in this BOQ",
+      "value": "13.0",
+      "unit": "m3"
+    },
+    {
+      "source_key": "1123456789012345678901|Qto_WallBaseQuantities|NetVolume",
+      "disposition": "MAPPED",
+      "mapping_rule_id": "MAP-WALL-NET",
+      "boq_code": "C-001",
+      "source_value": "12.5",
+      "source_unit": "m3",
+      "boq_value": "12.5",
+      "boq_unit": "m3"
+    },
+    {
+      "source_key": "4123456789012345678901|Qto_WallBaseQuantities|NetVolume",
+      "disposition": "MAPPED",
+      "mapping_rule_id": "MAP-WALL-NET",
+      "boq_code": "C-001",
+      "source_value": "3.0",
+      "source_unit": "m3",
+      "boq_value": "3.0",
+      "boq_unit": "m3"
+    }
+  ],
+  "findings": []
+}

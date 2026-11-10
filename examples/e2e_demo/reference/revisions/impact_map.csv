@@ -1,0 +1,3 @@
+sheet,quantity_id,boq_code,item,review_status,reviewer,reviewed_at,evidence_ref,rationale
+RD-001,QTO-RD-001,ROAD-001,Granular subbase quantity,RECALCULATED,Synthetic QS,2026-10-28,QT-001-review-row-12,Quantity rechecked against Rev B drawing
+RD-004,,,Drawing index only,NO_QUANTITY_IMPACT,Synthetic QS,2026-10-28,RD-004-title-block-review,Administrative index sheet only; no measurable scope

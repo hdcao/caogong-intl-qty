@@ -1,0 +1,45 @@
+{
+  "state": "partial",
+  "items": [
+    {
+      "id": "python",
+      "name": "Python 运行时",
+      "required": true,
+      "status": "ready",
+      "detail": "3.13.14（需 ≥ 3.9）",
+      "fallback": "换用满足版本要求的 Python"
+    },
+    {
+      "id": "openpyxl",
+      "name": "Excel 读写",
+      "required": true,
+      "status": "ready",
+      "detail": "已安装 3.1.5",
+      "fallback": "pip install openpyxl（读算量表与成本表必需）"
+    },
+    {
+      "id": "pymupdf",
+      "name": "PDF 矢量提取",
+      "required": true,
+      "status": "ready",
+      "detail": "已安装 1.28.2",
+      "fallback": "pip install pymupdf（读轮廓化图纸、数图元用）"
+    },
+    {
+      "id": "PIL",
+      "name": "图像裁切",
+      "required": false,
+      "status": "partial",
+      "detail": "未安装",
+      "fallback": "pip install pillow（高倍渲染后裁切局部用）"
+    },
+    {
+      "id": "read-figures",
+      "name": "数图元（数桩位/数支座这类问题）",
+      "required": false,
+      "status": "ready",
+      "detail": "有 pymupdf 可直接读矢量坐标（推荐）",
+      "fallback": "无 pymupdf 时改用 200~300dpi 渲染 + 裁切目视，但必须在交付说明里标注\"数量未经矢量法复核\""
+    }
+  ]
+}

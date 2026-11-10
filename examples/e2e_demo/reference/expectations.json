@@ -1,0 +1,62 @@
+{
+  "source": "SIM-REQ-S-01 synthetic reference quantities",
+  "tolerance": 0.005,
+  "expectations": [
+    {
+      "id": "EXP-CBS-RD-001",
+      "match": "Roadway excavation",
+      "unit": "m3",
+      "expect": 1200.0,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    },
+    {
+      "id": "EXP-CBS-RD-002",
+      "match": "Granular subbase",
+      "unit": "m3",
+      "expect": 160.0,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    },
+    {
+      "id": "EXP-CBS-RD-003",
+      "match": "Asphalt concrete",
+      "unit": "m3",
+      "expect": 35.0,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    },
+    {
+      "id": "EXP-CBS-CV-004",
+      "match": "Box culvert base slab concrete",
+      "unit": "m3",
+      "expect": 3.6,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    },
+    {
+      "id": "EXP-CBS-CV-005",
+      "match": "Box culvert wall concrete",
+      "unit": "m3",
+      "expect": 3.6,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    },
+    {
+      "id": "EXP-CBS-CV-006",
+      "match": "Box culvert top slab concrete",
+      "unit": "m3",
+      "expect": 3.6,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    },
+    {
+      "id": "EXP-CBS-OPT-001",
+      "match": "Steel guardrail",
+      "unit": "m",
+      "expect": 200.0,
+      "tolerance": 0.005,
+      "note": "Synthetic owner/reference schedule, not a real owner BOQ"
+    }
+  ]
+}

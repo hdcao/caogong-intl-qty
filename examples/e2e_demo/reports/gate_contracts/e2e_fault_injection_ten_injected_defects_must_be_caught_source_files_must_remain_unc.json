@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_FAULT_INJECTION_TEN_INJECTED_DEFECTS_MUST_BE_CAUGHT_SOURCE_FILES_MUST_REMAIN_UNC",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples/e2e_demo/input/summary_control.xlsx": "7b568d63b372d88ae8eb318bb70a2283dfea78d49726b848e1f83761935898ce",
+    "examples/e2e_demo/reference/cross_sheet_map.json": "9a5d160d0a69a58ec5c0f53c767f86ff7b2c5317ff4f6a5a4a1315c42af59bee",
+    "examples/e2e_demo/reference/drawing_baseline.json": "700bca452749b1d53449ab29d9c1749cbf3ab1f42134e8131551e503bdffc296",
+    "scripts/gate_fault_injection.py": "0e8c6af50164e8d0a646965e667292dd52e944b2d1fe3786900c8a8ee3eeab0e"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Fault injection: ten injected defects must be caught; source files must remain unchanged",
+      "command": [
+        "{python}",
+        "scripts/gate_fault_injection.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--allow-subprocess",
+        "--xs-map",
+        "examples/e2e_demo/reference/cross_sheet_map.json",
+        "--summary",
+        "examples/e2e_demo/input/summary_control.xlsx",
+        "--basis",
+        "examples/e2e_demo/reference/drawing_baseline.json"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 18.99,
+      "log": "examples/e2e_demo/reports/gate_logs/fault_injection.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

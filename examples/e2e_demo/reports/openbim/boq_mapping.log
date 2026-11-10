@@ -1,0 +1,2 @@
+BOQ mapping: PASS | mapped=2 | excluded=1 | failures=0
+report=.\examples\e2e_demo\reports\openbim\boq_mapping.json

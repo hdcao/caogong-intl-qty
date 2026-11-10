@@ -1,0 +1,5 @@
+sheet,title,discipline,work_package,part,rev,date,scale,source_type,file,sha256,scope_status,superseded_by,blocks,confirmed_by,status,notes
+RD-001,Access Road Plan,CIVIL,WP-ROAD,STA 0+000-0+100,B,2026-10-15,1:500,pdf,current/RD-001-B.pdf,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd,full,,,,confirmed,synthetic revised drawing
+RD-002,Drainage Layout,CIVIL,WP-DRAIN,STA 0+000-0+100,A,2026-09-01,1:500,pdf,current/RD-002-A.pdf,bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,full,,,,confirmed,unchanged fixture
+RD-003,Typical Detail,CIVIL,WP-ROAD,typical,A,2026-09-01,1:20,pdf,current/RD-003-A.pdf,cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc,full,,,,confirmed,unchanged fixture
+RD-004,Drawing Index,CIVIL,WP-ADMIN,register,B,2026-10-15,NA,pdf,current/RD-004-B.pdf,eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee,excluded,,,,confirmed,no quantity scope

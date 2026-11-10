@@ -1,0 +1,20 @@
+期望总额闸门 G-XST | 表：quantity_takeoff.xlsx | 页签：1_成本取量总表 | 有效量行 7
+期望值来源：SIM-REQ-S-01 synthetic reference quantities
+--------------------------------------------------------------------------
+[PASS] EXP-CBS-RD-001「Roadway excavation」m3 期望 1200.0 实算 1200.0000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+[PASS] EXP-CBS-RD-002「Granular subbase」m3 期望 160.0 实算 160.0000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+[PASS] EXP-CBS-RD-003「Asphalt concrete」m3 期望 35.0 实算 35.0000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+[PASS] EXP-CBS-CV-004「Box culvert base slab concrete」m3 期望 3.6 实算 3.6000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+[PASS] EXP-CBS-CV-005「Box culvert wall concrete」m3 期望 3.6 实算 3.6000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+[PASS] EXP-CBS-CV-006「Box culvert top slab concrete」m3 期望 3.6 实算 3.6000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+[PASS] EXP-CBS-OPT-001「Steel guardrail」m 期望 200.0 实算 200.0000 差 +0.00%（容差 0.5%，匹配 1 行）
+       备注：Synthetic owner/reference schedule, not a real owner BOQ
+--------------------------------------------------------------------------
+已扫 7 项期望：FAIL 0 / WARN 未清 0
+[PASS] 全部期望项落在容差内。

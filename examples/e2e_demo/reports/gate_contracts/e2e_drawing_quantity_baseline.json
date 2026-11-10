@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_DRAWING_QUANTITY_BASELINE",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples/e2e_demo/reference/drawing_baseline.json": "700bca452749b1d53449ab29d9c1749cbf3ab1f42134e8131551e503bdffc296",
+    "scripts/gate_drawing_basis.py": "f022498e5bed3376e71687b5cea2997e065c42cef20590974a7792e57c405ea8"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Drawing quantity baseline",
+      "command": [
+        "{python}",
+        "scripts/gate_drawing_basis.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--basis",
+        "examples/e2e_demo/reference/drawing_baseline.json"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.754,
+      "log": "examples/e2e_demo/reports/gate_logs/drawing_basis.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

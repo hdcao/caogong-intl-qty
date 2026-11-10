@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_SPREADSHEET_FORMULA_AND_SUBTOTAL_INTEGRITY",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "scripts/gate_sheet_formula.py": "94ab5cc41973efe9d3adcbdf6593a21dc2cd0af41f4e7f2e07c12fe8ff4e4355"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Spreadsheet formula and subtotal integrity",
+      "command": [
+        "{python}",
+        "scripts/gate_sheet_formula.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.558,
+      "log": "examples/e2e_demo/reports/gate_logs/sheet_formula.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

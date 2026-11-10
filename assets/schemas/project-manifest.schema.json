@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:caogong-intl-qty:project-manifest.schema.json",
+  "title": "International QTO Project Manifest",
+  "type": "object",
+  "required": ["schema_version", "unit_alias_registry_file", "project", "scope", "contract_and_measurement", "drawing_baseline", "quantity_basis_policy", "quality_policy", "software_baseline"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "unit_alias_registry_file": {"$ref": "#/$defs/relativePath"},
+    "project": {
+      "type": "object",
+      "required": ["project_id", "project_name", "country_or_jurisdiction", "discipline", "status"],
+      "properties": {
+        "project_id": {"type": "string", "minLength": 1},
+        "project_name": {"type": "string", "minLength": 1},
+        "country_or_jurisdiction": {"type": "string", "minLength": 1},
+        "discipline": {"type": "string", "minLength": 1},
+        "package_or_work_section": {"type": "string"},
+        "prepared_by": {"type": "string"},
+        "prepared_at": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ].*)?$"},
+        "status": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": ["included", "excluded", "assumptions_register"],
+      "properties": {
+        "included": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "excluded": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "assumptions_register": {"$ref": "#/$defs/relativePath"},
+        "scope_confirmation_reference": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "contract_and_measurement": {
+      "type": "object",
+      "required": ["contract_id", "contract_document_revision", "measurement_standard", "measurement_standard_version", "project_specific_amendments", "rule_registry_file", "approval_status"],
+      "properties": {
+        "contract_id": {"type": "string", "minLength": 1},
+        "contract_document_revision": {"type": "string", "minLength": 1},
+        "measurement_standard": {"type": "string", "minLength": 1},
+        "measurement_standard_version": {"type": "string", "minLength": 1},
+        "project_specific_amendments": {"type": "array"},
+        "rule_registry_file": {"$ref": "#/$defs/relativePath"},
+        "approval_status": {"type": "string", "minLength": 1},
+        "approved_by": {"type": ["string", "null"]},
+        "approved_at": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ].*)?$"}
+      },
+      "additionalProperties": true
+    },
+    "drawing_baseline": {
+      "type": "object",
+      "required": ["register_file", "register_status"],
+      "properties": {
+        "register_file": {"$ref": "#/$defs/relativePath"},
+        "register_status": {"type": "string", "minLength": 1},
+        "baseline_id": {"type": ["string", "null"]},
+        "baseline_created_at": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ].*)?$"}
+      },
+      "additionalProperties": true
+    },
+    "quantity_basis_policy": {
+      "type": "object",
+      "required": ["allowed_bases", "unit_system"],
+      "properties": {
+        "allowed_bases": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["DESIGN_THEORETICAL", "CONTRACT_MEASURED", "TENDER_BOQ", "SITE_CLAIMED", "CERTIFIED_PAYMENT"]}},
+        "default_basis": {"type": ["string", "null"]},
+        "rounding_policy_reference": {"type": ["string", "null"]},
+        "unit_system": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "quality_policy": {
+      "type": "object",
+      "required": ["overall_coverage_threshold_is_not_sufficient_for_release", "mandatory_gates"],
+      "properties": {
+        "critical_items_require_evidence": {"type": "boolean"},
+        "overall_coverage_threshold_is_not_sufficient_for_release": {"const": true},
+        "mandatory_gates": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "accepted_open_items": {"type": "array"},
+        "release_authority": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "software_baseline": {
+      "type": "object",
+      "required": ["skill_version"],
+      "properties": {
+        "skill_version": {"type": "string", "minLength": 1},
+        "python_version": {"type": ["string", "null"]},
+        "environment_report": {"type": ["string", "null"]},
+        "source_revision_or_package_hash": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "relativePath": {"type": "string", "minLength": 1, "not": {"pattern": "^(?:/|[A-Za-z]:[\\\\/])"}, "pattern": "^(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+$"}
+  },
+  "additionalProperties": true
+}

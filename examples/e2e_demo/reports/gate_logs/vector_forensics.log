@@ -1,0 +1,6 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+==============================================================================
+p1   1190.6x841.9 pt  rot=0  text=1015  fonts=2  drawings=22  -> vector_with_text (完整文字层)
+   route  文本层解析（最快最准）
+   size   1133.9x785.2:1, 496.1x39.7:1, 158.7x102.0:1, 134.9x78.2:1, 354.3x70.9:1, 623.6x45.4:1
+   angle  90deg:11, 0deg:5

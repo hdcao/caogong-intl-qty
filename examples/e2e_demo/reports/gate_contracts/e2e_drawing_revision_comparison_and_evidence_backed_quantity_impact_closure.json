@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_DRAWING_REVISION_COMPARISON_AND_EVIDENCE_BACKED_QUANTITY_IMPACT_CLOSURE",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/reference/revisions/baseline.csv": "009c5d1afcf893b902327e177326583648e475d16918824681b4f809670a409c",
+    "examples/e2e_demo/reference/revisions/current.csv": "342b76e2b1c51cbafb12692e97735e1735d87565c775037f8ef6522a077b671d",
+    "examples/e2e_demo/reference/revisions/impact_map.csv": "f991f0d3a5311a3c04ac9e17e9065f92dbb26f589a42be3289d43e899ebbe973",
+    "scripts/drawing_revision_diff.py": "37f5938f3bd5b7f36ad93e0d717ee47c0906196d45d9e73fd03c00f971fc17c4"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Drawing revision comparison and evidence-backed quantity impact closure",
+      "command": [
+        "{python}",
+        "scripts/drawing_revision_diff.py",
+        "compare",
+        "--baseline",
+        "examples/e2e_demo/reference/revisions/baseline.csv",
+        "--current",
+        "examples/e2e_demo/reference/revisions/current.csv",
+        "--impact-map",
+        "examples/e2e_demo/reference/revisions/impact_map.csv",
+        "--project-id",
+        "SIM-E2E-001",
+        "--out-dir",
+        "examples/e2e_demo/reports/revision_impact",
+        "--fail-on-unreviewed"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.386,
+      "log": "examples/e2e_demo/reports/gate_logs/drawing_revision_diff.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

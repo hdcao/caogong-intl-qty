@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "tool": "drawing_revision_diff",
+  "tool_version": "1.1.0",
+  "project_id": "SIM-E2E-001",
+  "snapshots": {
+    "baseline": {
+      "path": ".\\examples\\e2e_demo\\reference\\revisions\\baseline.csv",
+      "sha256": "009c5d1afcf893b902327e177326583648e475d16918824681b4f809670a409c",
+      "rows_read": 3,
+      "active_sheets": 3
+    },
+    "current": {
+      "path": ".\\examples\\e2e_demo\\reference\\revisions\\current.csv",
+      "sha256": "342b76e2b1c51cbafb12692e97735e1735d87565c775037f8ef6522a077b671d",
+      "rows_read": 4,
+      "active_sheets": 4
+    },
+    "impact_map": {
+      "path": ".\\examples\\e2e_demo\\reference\\revisions\\impact_map.csv",
+      "sha256": "f991f0d3a5311a3c04ac9e17e9065f92dbb26f589a42be3289d43e899ebbe973",
+      "rows_read": 2
+    }
+  },
+  "summary": {
+    "ADDED": 1,
+    "REVISION_AND_CONTENT_CHANGED": 1,
+    "UNCHANGED": 2
+  },
+  "changes": [
+    {
+      "sheet": "RD-001",
+      "change_type": "REVISION_AND_CONTENT_CHANGED",
+      "baseline_rev": "A",
+      "current_rev": "B",
+      "baseline_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "current_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "baseline_file": "baseline/RD-001-A.pdf",
+      "current_file": "current/RD-001-B.pdf",
+      "impact_disposition": "CLOSED_RECALCULATED_OR_REVIEWED",
+      "quantity_impacts": [
+        {
+          "quantity_id": "QTO-RD-001",
+          "boq_code": "ROAD-001",
+          "item": "Granular subbase quantity",
+          "review_status": "RECALCULATED",
+          "reviewer": "Synthetic QS",
+          "reviewed_at": "2026-10-28",
+          "evidence_ref": "QT-001-review-row-12",
+          "rationale": "Quantity rechecked against Rev B drawing"
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "sheet": "RD-002",
+      "change_type": "UNCHANGED",
+      "baseline_rev": "A",
+      "current_rev": "A",
+      "baseline_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "current_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "baseline_file": "baseline/RD-002-A.pdf",
+      "current_file": "current/RD-002-A.pdf",
+      "impact_disposition": "NOT_REQUIRED",
+      "quantity_impacts": [],
+      "blockers": []
+    },
+    {
+      "sheet": "RD-003",
+      "change_type": "UNCHANGED",
+      "baseline_rev": "A",
+      "current_rev": "A",
+      "baseline_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "current_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline_file": "baseline/RD-003-A.pdf",
+      "current_file": "current/RD-003-A.pdf",
+      "impact_disposition": "NOT_REQUIRED",
+      "quantity_impacts": [],
+      "blockers": []
+    },
+    {
+      "sheet": "RD-004",
+      "change_type": "ADDED",
+      "baseline_rev": "",
+      "current_rev": "B",
+      "baseline_sha256": "",
+      "current_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "baseline_file": "",
+      "current_file": "current/RD-004-B.pdf",
+      "impact_disposition": "CLOSED_NO_QUANTITY_IMPACT",
+      "quantity_impacts": [
+        {
+          "quantity_id": "",
+          "boq_code": "",
+          "item": "Drawing index only",
+          "review_status": "NO_QUANTITY_IMPACT",
+          "reviewer": "Synthetic QS",
+          "reviewed_at": "2026-10-28",
+          "evidence_ref": "RD-004-title-block-review",
+          "rationale": "Administrative index sheet only; no measurable scope"
+        }
+      ],
+      "blockers": []
+    }
+  ],
+  "release_review": {
+    "eligible": true,
+    "blockers": []
+  },
+  "limitations": [
+    "Register/hash comparison only; no geometric overlay or semantic drawing diff.",
+    "Changed drawing does not automatically imply a quantity change; every changed sheet needs a documented disposition.",
+    "Software validation is not an authorized professional sign-off."
+  ]
+}

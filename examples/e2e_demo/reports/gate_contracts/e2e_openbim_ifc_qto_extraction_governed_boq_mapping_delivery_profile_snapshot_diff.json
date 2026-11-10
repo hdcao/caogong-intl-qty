@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_OPENBIM_IFC_QTO_EXTRACTION_GOVERNED_BOQ_MAPPING_DELIVERY_PROFILE_SNAPSHOT_DIFF",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {},
+  "metrics": {
+    "runner": {
+      "step_name": "OpenBIM IFC QTO extraction / governed BOQ mapping / delivery profile / snapshot diff",
+      "command": [
+        "{python}",
+        "examples/e2e_demo/run_openbim_demo.py"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 9.476,
+      "log": "examples/e2e_demo/reports/gate_logs/openbim_workflow.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

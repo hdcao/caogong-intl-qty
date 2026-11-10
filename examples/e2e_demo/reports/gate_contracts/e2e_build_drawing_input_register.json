@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_BUILD_DRAWING_INPUT_REGISTER",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/takeoff/register/scan/drawings_seed.csv": "0a11962583971c0720a53f822ca86be4f505576840aac7b755b297dc53a3b595",
+    "examples/e2e_demo/takeoff/register/scope.csv": "eb43fd7ef88138d10cb437a168a126e77e6a996e771cf4f1327b8c01fd4ce073",
+    "scripts/build_input_register.py": "03fe8d93584e5495988afd662172d8132bcb83a6090a3913598ec0bd09119e5f"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Build drawing/input register",
+      "command": [
+        "{python}",
+        "scripts/build_input_register.py",
+        "build",
+        "--register",
+        "examples/e2e_demo/takeoff/register/scan/drawings_seed.csv",
+        "--scope",
+        "examples/e2e_demo/takeoff/register/scope.csv",
+        "--project",
+        "SIM-E2E-001",
+        "--out",
+        "examples/e2e_demo/takeoff/register/built",
+        "--rev-addendum",
+        "SIM-RD-CV-001 Rev.2 (synthetic)"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 4.41,
+      "log": "examples/e2e_demo/reports/gate_logs/input_register.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

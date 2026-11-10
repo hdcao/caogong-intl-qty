@@ -1,0 +1,19 @@
+单位量纲一致性门禁 G-UNIT | 表：quantity_takeoff.xlsx | 页签：1_成本取量总表
+体积类行 6 条（其中 6 条有单价，0 条无单价）
+--------------------------------------------------------------------------
+单价数量级分布：
+  10^1    2 行  单价      12.00 ~      24.00  例：Roadway excavation
+  10^2    4 行  单价     105.00 ~     180.00  例：Asphalt concrete
+ACK 台账：2 条（.\examples\e2e_demo\reference\ack_rate_outliers.csv）
+
+[ACK] G-U2 2 行已人工确认（不计 WARN）：
+       r3    Roadway excavation           理由：SIMULATION ONLY: excavation rate intentionally differs by scope/material class; not a market price.
+       r4    Granular subbase             理由：SIMULATION ONLY: subbase rate intentionally differs by scope/material class; not a market price.
+
+[PASS] G-U2 本次 2 行整档偏离**全部已有 ack 结论**，无新增
+---
+【本门禁的定位与局限，务必知道】
+· 它是**WARN 不是 FAIL**：离群可能是特殊材料，也可能是量纲错，机器不该替人判。它的作用是让你看见这一档。
+· **量的绝对大小无法用于判断量纲**：小构件与大构件天然差几个数量级，实测据此判会误报（湿接缝 31 m³ vs 承台 14582 m³）。
+· 它**替代不了模型×二维交叉复核**：量纲问题要在两侧同源比对时才暴露得出来——单看一张表永远分不清"贵"与"错"。
+== 单位门禁结束 ==

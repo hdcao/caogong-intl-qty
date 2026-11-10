@@ -1,0 +1,3 @@
+﻿gate,table,sheet,row,expect,reason,date,by
+G-U2,quantity_takeoff.xlsx,1_成本取量总表,3,qty=1200.00|price=12.00,SIMULATION ONLY: excavation rate intentionally differs by scope/material class; not a market price.,2026-10-24,SIM-REVIEW-01
+G-U2,quantity_takeoff.xlsx,1_成本取量总表,4,qty=160.00|price=24.00,SIMULATION ONLY: subbase rate intentionally differs by scope/material class; not a market price.,2026-10-24,SIM-REVIEW-01

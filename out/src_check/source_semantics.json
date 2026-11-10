@@ -1,0 +1,13 @@
+{
+ "file": "D:\\Temp\\gsrc_iqe2dcuc\\clean.xlsx",
+ "sheet": "Sheet1",
+ "headers": [
+  "编码",
+  "项目名称",
+  "单位",
+  "数量",
+  "单价"
+ ],
+ "n_rows": 8,
+ "findings": []
+}

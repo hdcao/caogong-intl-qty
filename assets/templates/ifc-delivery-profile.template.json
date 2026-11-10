@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "TO_BE_ASSIGNED",
+  "project_id": "TO_BE_ASSIGNED",
+  "profile_note": "IDS-inspired supported subset only; not a full IDS file. Requirements must be agreed by the project BIM/QS lead.",
+  "requirements": [
+    {
+      "requirement_id": "WALL-BASE-QTO",
+      "entity_types": ["IFCWALL"],
+      "min_count": 1,
+      "require_global_id": true,
+      "require_name": true,
+      "required_quantity_sets": ["Qto_WallBaseQuantities"],
+      "required_quantities": [
+        {"quantity_set": "Qto_WallBaseQuantities", "quantity_name": "NetVolume", "kind": "volume", "unit_dimension": "volume"}
+      ]
+    }
+  ]
+}

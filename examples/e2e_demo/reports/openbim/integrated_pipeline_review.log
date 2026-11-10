@@ -1,0 +1,2 @@
+OpenBIM pipeline: REVIEW_REQUIRED | release_eligible=False | stages=5
+report=.\examples\e2e_demo\reports\openbim\pipeline\pipeline_summary.json

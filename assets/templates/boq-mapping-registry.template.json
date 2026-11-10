@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "TO_BE_ASSIGNED",
+  "mapping_rules": [
+    {
+      "rule_id": "MAP-WALL-NET-VOLUME-001",
+      "status": "DRAFT",
+      "approved_by": null,
+      "approved_at": null,
+      "source_document": "TO_BE_CONFIRMED",
+      "source_clause": "TO_BE_CONFIRMED",
+      "element_type": "IFCWALL",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "NetVolume",
+      "kind": "volume",
+      "boq_code": "TO_BE_CONFIRMED",
+      "boq_description": "TO_BE_CONFIRMED",
+      "boq_unit": "m3"
+    }
+  ],
+  "approved_exclusions": []
+}

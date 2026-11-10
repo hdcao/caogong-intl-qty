@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_MODEL_VS_2D_QUANTITY_COMPARISON",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/reference/2d_quantities.json": "ec2d6640b4a0e477d25dea689712ca683b9e297036cd099ff795ae14ca521b0e",
+    "examples/e2e_demo/reference/model_quantities.json": "643f2d90b0329885b6a1961f80dddcea94f9caf620b08455397c85384d9f7972",
+    "scripts/xcheck_model_vs_2d.py": "cc39df199ffca6e319aeebcafd5ef4543c08b541ab4fb4f5df7e62a1a8feb49c"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Model-vs-2D quantity comparison",
+      "command": [
+        "{python}",
+        "scripts/xcheck_model_vs_2d.py",
+        "examples/e2e_demo/reference/model_quantities.json",
+        "examples/e2e_demo/reference/2d_quantities.json",
+        "--stage",
+        "all",
+        "--report",
+        "examples/e2e_demo/reports/model_vs_2d.md"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.462,
+      "log": "examples/e2e_demo/reports/gate_logs/model_2d.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

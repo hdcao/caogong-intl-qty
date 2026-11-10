@@ -1,0 +1,7 @@
+interface:
+  display_name: "曹工国际工程算量助手"
+  short_description: "国际工程图纸算量、BOQ核对与证据追溯"
+  brand_color: "#1F5A75"
+  default_prompt: "请先检查项目计量规则、图纸版本和算量范围，再按曹工国际工程算量助手流程开展取量与复核；若输入是 IFC 基线/当前版本，优先使用受控 OpenBIM 一键流水线并核查综合状态。"
+policy:
+  allow_implicit_invocation: true

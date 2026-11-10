@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "PROJECT_CONFIG",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": 5,
+  "expected_count": 5,
+  "skipped_count": 0,
+  "tool_version": "1.1.0",
+  "rule_version": "1.0.0",
+  "input_hashes": {
+    "reference/measurement_rule_registry.json": "fa2e0f251f5651844425d62e2addd051f53bad8901d1298b9c06152c57f50120",
+    "reference/project_manifest.json": "09dc50827903e9f847517483a16d02e046a8159139fdc7e28ccde85c52e9e113",
+    "reference/unit_alias_registry.json": "96a20d05b8b779399cd4ddb0feaba5bd32912f0488282a84a9beb6d55d238337"
+  },
+  "metrics": {
+    "manifest_schema_version": "1.0.0",
+    "manifest_skill_version": "4.6.1",
+    "project_id": "SIM-E2E-001",
+    "package_version": "4.6.1",
+    "manifest_version_matches_package": true,
+    "rules_checked": 5,
+    "unit_aliases_checked": 0,
+    "release_mode": false,
+    "as_of_date": "2026-11-02",
+    "configuration_placeholders": [],
+    "release_eligible": false,
+    "project_status": "SIMULATION_ONLY",
+    "contract_approval": "SIMULATION_ONLY_NOT_AUTHORIZED",
+    "drawing_status": "SIMULATION_ONLY",
+    "runner": {
+      "step_name": "Project manifest / measurement-rule / unit-alias preflight",
+      "command": [
+        "{python}",
+        "scripts/qto_project_validate.py",
+        "--manifest",
+        "examples/e2e_demo/reference/project_manifest.json",
+        "--project-root",
+        "examples/e2e_demo",
+        "--json-out",
+        "examples/e2e_demo/reports/project_config_validation.json"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.793,
+      "log": "examples/e2e_demo/reports/gate_logs/project_config_validation.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": false
+    }
+  },
+  "issues": []
+}

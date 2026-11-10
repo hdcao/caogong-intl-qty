@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_PDF_VECTOR_FORENSIC_PROBE",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf": "d0bff746ab93ef3364792b10c4023b404866108cde747b6857028541ffdc6a83",
+    "scripts/vector_forensics.py": "0cbd461c85f0899837bcdbe5dc160094fb1c14002b00eeec846e3970f833d57c"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "PDF vector forensic probe",
+      "command": [
+        "{python}",
+        "scripts/vector_forensics.py",
+        "probe",
+        "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf",
+        "--out",
+        "examples/e2e_demo/reports/vector_probe.json"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.477,
+      "log": "examples/e2e_demo/reports/gate_logs/vector_forensics.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

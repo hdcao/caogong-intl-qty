@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caogong.example/schemas/openbim-pipeline-result.schema.json",
+  "title": "OpenBIM QTO orchestration result",
+  "type": "object",
+  "required": [
+    "schema_version", "tool", "tool_version", "project_id", "status",
+    "release_eligible", "input_hashes_before", "input_hashes_after",
+    "source_inputs_unchanged", "stage_statuses", "steps", "blocking_reasons",
+    "report_paths", "scope_note"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "tool": {"const": "openbim_pipeline"},
+    "tool_version": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PASS", "REVIEW_REQUIRED", "BLOCKED"]},
+    "release_eligible": {"type": "boolean"},
+    "started_at_utc": {"type": "string", "format": "date-time"},
+    "input_hashes_before": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "input_hashes_after": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "source_inputs_unchanged": {"type": "boolean"},
+    "stage_statuses": {"type": "object", "additionalProperties": {"type": "string"}},
+    "steps": {"type": "array", "minItems": 5, "items": {
+      "type": "object", "required": ["step", "status", "report"],
+      "properties": {"step": {"type": "string"}, "status": {"type": "string"}, "report": {"type": "string"}, "metrics": {"type": "object"}, "message": {"type": "string"}},
+      "additionalProperties": true
+    }},
+    "blocking_reasons": {"type": "array", "items": {"type": "string"}},
+    "report_paths": {"type": "object", "additionalProperties": {"type": "string"}},
+    "scope_note": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

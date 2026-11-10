@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_BASELINE_FRESHNESS_MTIME_INTENTIONALLY_SKIPPED_FOR_REPRODUCIBLE_ARCHIVE_TESTS",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples/e2e_demo/reference/basis_freshness.json": "6404f86f845d4bee4dc63654f0960c14ff511a3bfe5d92cebca1b96696dd3f6c",
+    "scripts/gate_basis_freshness.py": "017a23bfe666635fe924e402be30d6bcf42f7195911123c1332b3d0233a55123"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Baseline freshness (mtime intentionally skipped for reproducible archive tests)",
+      "command": [
+        "{python}",
+        "scripts/gate_basis_freshness.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--basis",
+        "examples/e2e_demo/reference/basis_freshness.json",
+        "--skip-mtime"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.72,
+      "log": "examples/e2e_demo/reports/gate_logs/basis_freshness.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "tool": "ifc_qto_diff",
+  "status": "REVIEW_REQUIRED",
+  "input_hashes": {
+    "baseline": "c056a9e11bd729bef4cc81bcfea263e5ed7748b8ab3add2122a64507957dab45",
+    "current": "f93527d184647fc6cc791bcde2b1be31f4e26a6ba93f6e22806fc632546fa512"
+  },
+  "metrics": {
+    "baseline_quantities": 3,
+    "current_quantities": 3,
+    "quantity_added": 0,
+    "quantity_removed": 0,
+    "quantity_changed": 1,
+    "not_comparable": 0,
+    "element_added": 0,
+    "element_removed": 0
+  },
+  "element_added": [],
+  "element_removed": [],
+  "quantity_changes": [
+    {
+      "element_global_id": "1123456789012345678901",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "GrossVolume",
+      "kind": "volume",
+      "change": "UNCHANGED",
+      "baseline_value": "13.0",
+      "baseline_unit": "m3",
+      "baseline_converted_to_current_unit": "13.0",
+      "current_value": "13.0",
+      "current_unit": "m3",
+      "absolute_delta": "0.0",
+      "relative_delta": "0"
+    },
+    {
+      "element_global_id": "1123456789012345678901",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "NetVolume",
+      "kind": "volume",
+      "change": "CHANGED",
+      "baseline_value": "12.5",
+      "baseline_unit": "m3",
+      "baseline_converted_to_current_unit": "12.5",
+      "current_value": "12.8",
+      "current_unit": "m3",
+      "absolute_delta": "0.3",
+      "relative_delta": "0.0234375"
+    },
+    {
+      "element_global_id": "4123456789012345678901",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "NetVolume",
+      "kind": "volume",
+      "change": "UNCHANGED",
+      "baseline_value": "3.0",
+      "baseline_unit": "m3",
+      "baseline_converted_to_current_unit": "3.0",
+      "current_value": "3.0",
+      "current_unit": "m3",
+      "absolute_delta": "0.0",
+      "relative_delta": "0"
+    }
+  ],
+  "findings": [
+    {
+      "code": "MODEL_QTO_CHANGE_REQUIRES_REVIEW",
+      "severity": "FAIL",
+      "message": "snapshot differences were found; this report does not automatically approve their quantity/BOQ impact"
+    }
+  ],
+  "release_note": "Changes are intentionally not auto-approved. Link every change to BOQ impact review or an evidence-backed no-impact declaration before release."
+}

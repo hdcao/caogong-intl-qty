@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "TO_BE_ASSIGNED",
+  "context": {
+    "jurisdiction": "TO_BE_CONFIRMED",
+    "language": "TO_BE_CONFIRMED"
+  },
+  "aliases": [],
+  "notes": "Only add aliases when their meaning is approved for this project and supported by a source. Do not globally assume the meaning of legacy symbols such as CM."
+}

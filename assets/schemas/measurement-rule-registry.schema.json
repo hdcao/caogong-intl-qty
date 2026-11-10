@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:caogong-intl-qty:measurement-rule-registry.schema.json",
+  "title": "Measurement Rule Registry",
+  "type": "object",
+  "required": ["schema_version", "rules"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "title", "discipline", "jurisdiction", "source_document", "source_revision", "measurement_basis", "unit", "inclusion_rules", "exclusion_rules", "deduction_rules", "rounding_policy", "precedence_rank", "approval_status", "test_case_ids"],
+        "properties": {
+          "rule_id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "discipline": {"type": "string", "minLength": 1},
+          "jurisdiction": {"type": "string", "minLength": 1},
+          "source_document": {"type": "string", "minLength": 1},
+          "source_revision": {"type": "string", "minLength": 1},
+          "contract_clause": {"type": ["string", "null"]},
+          "effective_from": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ].*)?$"},
+          "effective_to": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ].*)?$"},
+          "measurement_basis": {"enum": ["DESIGN_THEORETICAL", "CONTRACT_MEASURED", "TENDER_BOQ", "SITE_CLAIMED", "CERTIFIED_PAYMENT"]},
+          "unit": {"type": "string", "minLength": 1},
+          "inclusion_rules": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "exclusion_rules": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "deduction_rules": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "rounding_policy": {"type": "string", "minLength": 1},
+          "precedence_rank": {"type": "integer", "minimum": 1},
+          "approval_status": {"enum": ["DRAFT", "PENDING", "SIMULATION_ONLY_NOT_AUTHORIZED", "NOT_APPROVED", "APPROVED", "ACTIVE", "RELEASED", "REJECTED", "SUPERSEDED"]},
+          "approved_by": {"type": ["string", "null"]},
+          "approved_at": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ].*)?$"},
+          "test_case_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

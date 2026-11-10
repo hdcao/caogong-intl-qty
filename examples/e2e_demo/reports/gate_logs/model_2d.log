@@ -1,0 +1,19 @@
+三维模型 × 二维算量 交叉复核
+  模型侧：model_quantities.json（7 项）
+  二维侧：2d_quantities.json（7 项）
+  判定阈值：EXACT ≤0.5% ｜ MINOR ≤5.0% ｜ MAJOR >5.0%
+  排除 LOT：无
+
+[结果] 同名可比项 7 项
+[INFO] G-X0 未发现“所有同名可比项均完全一致”的模式；数值差异本身不能证明两侧独立
+
+── 第一步：条目集合核对（抓导出漏项）──
+[PASS] G-E1 模型侧条目全部在二维侧有对应
+[PASS] G-E2 二维侧条目全部在模型侧有对应
+
+── 第二步：数值比对 ──
+EXACT 7 ｜ MINOR 0 ｜ MAJOR 0 ｜ NOT_COMPARABLE 0 ｜ 已排除 LOT 0
+
+报告已写：.\examples\e2e_demo\reports\model_vs_2d.md
+
+== 交叉复核通过 ==

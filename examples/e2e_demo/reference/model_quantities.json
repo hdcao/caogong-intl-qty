@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "name": "Roadway excavation",
+      "value": 1200.2,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "BIM export from independent corridor surfaces, simulated model run M-01"
+    },
+    {
+      "name": "Granular subbase",
+      "value": 160.0,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "BIM quantity takeoff from separate pavement layer solid M-01"
+    },
+    {
+      "name": "Asphalt concrete",
+      "value": 35.1,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "BIM layer thickness/area extraction M-01"
+    },
+    {
+      "name": "Box culvert base slab concrete",
+      "value": 3.6,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Model solid volume, separate object ID CV-BASE"
+    },
+    {
+      "name": "Box culvert wall concrete",
+      "value": 3.6,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Model solid union, separate object IDs CV-WALL-L/R"
+    },
+    {
+      "name": "Box culvert top slab concrete",
+      "value": 3.6,
+      "unit": "m3",
+      "kind": "quantity",
+      "param_source": "Model solid volume, separate object ID CV-TOP"
+    },
+    {
+      "name": "Steel guardrail (optional alternative)",
+      "value": 199.5,
+      "unit": "m",
+      "kind": "quantity",
+      "param_source": "Model curve length aggregation, object set GR-01/02"
+    }
+  ]
+}

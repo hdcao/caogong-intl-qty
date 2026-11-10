@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_CROSS_SHEET_VALUE_RECONCILIATION_HARDCODED_VALUES_EXPLICITLY_ALLOWED",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples/e2e_demo/reference/cross_sheet_map.json": "9a5d160d0a69a58ec5c0f53c767f86ff7b2c5317ff4f6a5a4a1315c42af59bee",
+    "scripts/gate_cross_sheet.py": "1180c40acaf4af707ae2c05b605d580526f46f70ecaf88fa753623abe3ddda77"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Cross-sheet value reconciliation (hardcoded values explicitly allowed)",
+      "command": [
+        "{python}",
+        "scripts/gate_cross_sheet.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--map",
+        "examples/e2e_demo/reference/cross_sheet_map.json",
+        "--allow-hardcoded"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.837,
+      "log": "examples/e2e_demo/reports/gate_logs/cross_sheet.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

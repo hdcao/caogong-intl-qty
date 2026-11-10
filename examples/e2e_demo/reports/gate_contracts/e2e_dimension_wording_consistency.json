@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_DIMENSION_WORDING_CONSISTENCY",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples/e2e_demo/reference/unit_alias_registry.json": "96a20d05b8b779399cd4ddb0feaba5bd32912f0488282a84a9beb6d55d238337",
+    "scripts/gate_dimension_wording.py": "504069806702e71a4c20ada3a535a628ff2dc07fecab4c804576ad4c1c5cd517"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Dimension-wording consistency",
+      "command": [
+        "{python}",
+        "scripts/gate_dimension_wording.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--code-col",
+        "2",
+        "--name-col",
+        "3",
+        "--unit-col",
+        "4",
+        "--value-col",
+        "5",
+        "--basis-col",
+        "12",
+        "--scope-col",
+        "9",
+        "--evidence-col",
+        "10",
+        "--formula-col",
+        "6",
+        "--rfi-col",
+        "17",
+        "--no-auto-map",
+        "--unit-registry",
+        "examples/e2e_demo/reference/unit_alias_registry.json",
+        "--project-id",
+        "SIM-E2E-001"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.64,
+      "log": "examples/e2e_demo/reports/gate_logs/dimension_wording.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

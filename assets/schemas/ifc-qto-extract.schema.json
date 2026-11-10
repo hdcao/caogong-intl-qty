@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caogong.example/schemas/ifc-qto-extract.schema.json",
+  "title": "曹工 IFC QTO Extraction Result",
+  "type": "object",
+  "required": ["schema_version", "tool", "tool_version", "status", "source_sha256", "project", "metrics", "elements", "quantities", "findings"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "tool": {"const": "ifc_qto_extract"},
+    "tool_version": {"type": "string"},
+    "status": {"enum": ["PASS", "WARN", "FAIL"]},
+    "source_file": {"type": "string"},
+    "source_path": {"type": "string"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "project": {"type": "object"},
+    "project_units": {"type": "object", "additionalProperties": {"type": "string"}},
+    "metrics": {"type": "object"},
+    "elements": {"type": "array", "items": {"type": "object", "required": ["step_id", "entity_type", "quantity_sets", "quantities"]}},
+    "quantities": {"type": "array", "items": {"type": "object", "required": ["quantity_step_id", "quantity_set", "quantity_name", "kind", "value", "unit", "source"]}},
+    "findings": {"type": "array", "items": {"type": "object", "required": ["code", "severity", "message"]}}
+  }
+}

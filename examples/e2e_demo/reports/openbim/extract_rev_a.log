@@ -1,0 +1,3 @@
+IFC QTO extraction: PASS | elements=2 | quantities=3 | fail=0 warn=0
+source_sha256=fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4
+report=.\examples\e2e_demo\reports\openbim\model_rev_a_qto.json

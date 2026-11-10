@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "tool": "openbim_pipeline",
+  "tool_version": "1.0.0",
+  "project_id": "SIM-E2E-OPENBIM-001",
+  "status": "REVIEW_REQUIRED",
+  "release_eligible": false,
+  "started_at_utc": "2026-11-02T07:09:08.416316+00:00",
+  "input_hashes_before": {
+    "baseline_ifc": "fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4",
+    "current_ifc": "cd145d723185ac18114b12e66bcd2ef77ab4edb2230579c94811cf891dcb60ac",
+    "mapping_registry": "6c514e4852f20876449b925433bb901ae8e468dbcfca89782e697d86b6bb23ac",
+    "delivery_profile": "549853cac45988237a0c23d61c9e72a0d5d37c757928b77576472402a92bbeae"
+  },
+  "input_hashes_after": {
+    "baseline_ifc": "fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4",
+    "current_ifc": "cd145d723185ac18114b12e66bcd2ef77ab4edb2230579c94811cf891dcb60ac",
+    "mapping_registry": "6c514e4852f20876449b925433bb901ae8e468dbcfca89782e697d86b6bb23ac",
+    "delivery_profile": "549853cac45988237a0c23d61c9e72a0d5d37c757928b77576472402a92bbeae"
+  },
+  "source_inputs_unchanged": true,
+  "stage_statuses": {
+    "extract_baseline": "PASS",
+    "extract_current": "PASS",
+    "delivery_profile": "PASS",
+    "boq_mapping": "PASS",
+    "snapshot_diff": "REVIEW_REQUIRED"
+  },
+  "steps": [
+    {
+      "step": "extract_baseline",
+      "status": "PASS",
+      "report": "baseline_qto.json",
+      "metrics": {
+        "ifc_entities": 14,
+        "recognized_elements": 2,
+        "quantity_sets": 2,
+        "linked_quantity_sets": 2,
+        "quantities_extracted": 3,
+        "failures": 0,
+        "warnings": 0,
+        "elements_without_quantities": 0
+      },
+      "message": "explicit IFC QTO only; no geometric recomputation is performed"
+    },
+    {
+      "step": "extract_current",
+      "status": "PASS",
+      "report": "current_qto.json",
+      "metrics": {
+        "ifc_entities": 14,
+        "recognized_elements": 2,
+        "quantity_sets": 2,
+        "linked_quantity_sets": 2,
+        "quantities_extracted": 3,
+        "failures": 0,
+        "warnings": 0,
+        "elements_without_quantities": 0
+      },
+      "message": "explicit IFC QTO only; no geometric recomputation is performed"
+    },
+    {
+      "step": "delivery_profile",
+      "status": "PASS",
+      "report": "delivery_check.json",
+      "metrics": {
+        "elements": 2,
+        "requirements": 1,
+        "failures": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "step": "boq_mapping",
+      "status": "PASS",
+      "report": "boq_mapping.json",
+      "metrics": {
+        "source_quantities": 3,
+        "valid_quantity_rows": 3,
+        "mapped_quantities": 2,
+        "approved_exclusions": 1,
+        "unmapped_or_invalid": 0,
+        "unmapped_quantities": 0,
+        "invalid_quantities": 0,
+        "invalid_quantity_rows": 0,
+        "boq_rows": 1,
+        "failures": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "step": "snapshot_diff",
+      "status": "REVIEW_REQUIRED",
+      "report": "snapshot_diff.json",
+      "metrics": {
+        "baseline_quantities": 3,
+        "current_quantities": 3,
+        "quantity_added": 0,
+        "quantity_removed": 0,
+        "quantity_changed": 1,
+        "not_comparable": 0,
+        "element_added": 0,
+        "element_removed": 0
+      },
+      "message": "Changes are intentionally not auto-approved. Link every change to BOQ impact review or an evidence-backed no-impact declaration before release."
+    }
+  ],
+  "blocking_reasons": [],
+  "report_paths": {
+    "baseline_qto": "baseline_qto.json",
+    "current_qto": "current_qto.json",
+    "delivery_check": "delivery_check.json",
+    "boq_mapping": "boq_mapping.json",
+    "snapshot_diff": "snapshot_diff.json",
+    "summary": "pipeline_summary.json",
+    "summary_markdown": "pipeline_summary.md"
+  },
+  "scope_note": "IFC STEP explicit quantity pipeline only. It does not infer quantities from geometry, does not implement the full official IDS grammar, does not perform PDF/CAD visual diff, and never auto-approves model changes. Any quantity change requires QS/contract review."
+}

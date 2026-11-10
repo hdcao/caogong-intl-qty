@@ -1,0 +1,5 @@
+﻿id,assumption,basis,risk,owner,status
+ASM-01,Earthworks represented by average section area × total length,Synthetic drawing and sample dimensions,May misrepresent varying section geometry,Test fixture,SIMULATION_ONLY
+ASM-02,Asphalt measured in m3 for software test,Simulated rule SIM-RULE-RD-03,Actual contract may use tonnes or another basis,Test fixture,SIMULATION_ONLY
+ASM-03,Concrete is net geometric volume without deductions,Simulated rule SIM-RULE-CV-04,Openings/overlaps/deduction rules not modelled,Test fixture,SIMULATION_ONLY
+ASM-04,Guardrail is 200 m but excluded from Base,Simulated CPB 4.0 optional line,Incorrect option tagging changes tender total,Test fixture,SIMULATION_ONLY

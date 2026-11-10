@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "SIM-IFC-QTO-PROFILE-001",
+  "project_id": "SIM-E2E-OPENBIM-001",
+  "profile_note": "Synthetic test profile only; not a project specification or full IDS file.",
+  "requirements": [
+    {
+      "requirement_id": "WALL-BASE-QTO",
+      "entity_types": [
+        "IFCWALL"
+      ],
+      "min_count": 2,
+      "require_global_id": true,
+      "require_name": true,
+      "required_quantity_sets": [
+        "Qto_WallBaseQuantities"
+      ],
+      "required_quantities": [
+        {
+          "quantity_set": "Qto_WallBaseQuantities",
+          "quantity_name": "NetVolume",
+          "kind": "volume",
+          "unit_dimension": "volume"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_UNIT_RATE_OUTLIER_CHECK_WITH_EXPLICIT_SYNTHETIC_ACK_AND_PROJECT_UNIT_REGISTRY",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/quantity_takeoff.xlsx": "be5071d61c3729d91a9110ea0f486d49c73b05d308c90ea57a3988231daca31d",
+    "examples/e2e_demo/reference/ack_rate_outliers.csv": "252d4e589156019ca77fe5e6363f4aa649098adcbb9190d574da63ca2778ce0d",
+    "examples/e2e_demo/reference/unit_alias_registry.json": "96a20d05b8b779399cd4ddb0feaba5bd32912f0488282a84a9beb6d55d238337",
+    "scripts/gate_unit_consistency.py": "5f11ad223e655b3aa497b60b3658f3f04e796d9a278187530cb9a5ab2506ee94"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Unit/rate outlier check with explicit synthetic ACK and project unit registry",
+      "command": [
+        "{python}",
+        "scripts/gate_unit_consistency.py",
+        "examples/e2e_demo/input/quantity_takeoff.xlsx",
+        "--sheet",
+        "1_成本取量总表",
+        "--ack",
+        "examples/e2e_demo/reference/ack_rate_outliers.csv",
+        "--unit-registry",
+        "examples/e2e_demo/reference/unit_alias_registry.json",
+        "--project-id",
+        "SIM-E2E-001"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.662,
+      "log": "examples/e2e_demo/reports/gate_logs/unit_consistency.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

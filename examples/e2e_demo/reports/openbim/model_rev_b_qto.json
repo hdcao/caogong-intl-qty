@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "tool": "ifc_qto_extract",
+  "tool_version": "1.0.0",
+  "status": "PASS",
+  "source_file": "model_rev_b.ifc",
+  "source_path": ".\\examples\\e2e_demo\\reference\\openbim\\model_rev_b.ifc",
+  "source_sha256": "cd145d723185ac18114b12e66bcd2ef77ab4edb2230579c94811cf891dcb60ac",
+  "project": {
+    "global_id": "0123456789012345678901",
+    "name": "Demo Project",
+    "schema": "IFC4"
+  },
+  "project_units": {
+    "LENGTHUNIT": "m",
+    "AREAUNIT": "m2",
+    "VOLUMEUNIT": "m3"
+  },
+  "metrics": {
+    "ifc_entities": 14,
+    "recognized_elements": 2,
+    "quantity_sets": 2,
+    "linked_quantity_sets": 2,
+    "quantities_extracted": 3,
+    "failures": 0,
+    "warnings": 0,
+    "elements_without_quantities": 0
+  },
+  "elements": [
+    {
+      "step_id": 10,
+      "global_id": "1123456789012345678901",
+      "entity_type": "IFCWALL",
+      "name": "Wall A",
+      "quantity_sets": [
+        "Qto_WallBaseQuantities"
+      ],
+      "quantities": [
+        {
+          "quantity_step_id": 20,
+          "element_global_id": "1123456789012345678901",
+          "element_step_id": 10,
+          "element_type": "IFCWALL",
+          "element_name": "Wall A",
+          "quantity_set": "Qto_WallBaseQuantities",
+          "quantity_name": "NetVolume",
+          "quantity_type": "IFCQUANTITYVOLUME",
+          "kind": "volume",
+          "value": "12.8",
+          "unit": "m3",
+          "unit_source": "project_unit_assignment",
+          "source": "IFC_IfcElementQuantity"
+        },
+        {
+          "quantity_step_id": 21,
+          "element_global_id": "1123456789012345678901",
+          "element_step_id": 10,
+          "element_type": "IFCWALL",
+          "element_name": "Wall A",
+          "quantity_set": "Qto_WallBaseQuantities",
+          "quantity_name": "GrossVolume",
+          "quantity_type": "IFCQUANTITYVOLUME",
+          "kind": "volume",
+          "value": "13.0",
+          "unit": "m3",
+          "unit_source": "project_unit_assignment",
+          "source": "IFC_IfcElementQuantity"
+        }
+      ]
+    },
+    {
+      "step_id": 11,
+      "global_id": "4123456789012345678901",
+      "entity_type": "IFCWALL",
+      "name": "Wall B",
+      "quantity_sets": [
+        "Qto_WallBaseQuantities"
+      ],
+      "quantities": [
+        {
+          "quantity_step_id": 23,
+          "element_global_id": "4123456789012345678901",
+          "element_step_id": 11,
+          "element_type": "IFCWALL",
+          "element_name": "Wall B",
+          "quantity_set": "Qto_WallBaseQuantities",
+          "quantity_name": "NetVolume",
+          "quantity_type": "IFCQUANTITYVOLUME",
+          "kind": "volume",
+          "value": "3.0",
+          "unit": "m3",
+          "unit_source": "project_unit_assignment",
+          "source": "IFC_IfcElementQuantity"
+        }
+      ]
+    }
+  ],
+  "quantities": [
+    {
+      "quantity_step_id": 21,
+      "element_global_id": "1123456789012345678901",
+      "element_step_id": 10,
+      "element_type": "IFCWALL",
+      "element_name": "Wall A",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "GrossVolume",
+      "quantity_type": "IFCQUANTITYVOLUME",
+      "kind": "volume",
+      "value": "13.0",
+      "unit": "m3",
+      "unit_source": "project_unit_assignment",
+      "source": "IFC_IfcElementQuantity"
+    },
+    {
+      "quantity_step_id": 20,
+      "element_global_id": "1123456789012345678901",
+      "element_step_id": 10,
+      "element_type": "IFCWALL",
+      "element_name": "Wall A",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "NetVolume",
+      "quantity_type": "IFCQUANTITYVOLUME",
+      "kind": "volume",
+      "value": "12.8",
+      "unit": "m3",
+      "unit_source": "project_unit_assignment",
+      "source": "IFC_IfcElementQuantity"
+    },
+    {
+      "quantity_step_id": 23,
+      "element_global_id": "4123456789012345678901",
+      "element_step_id": 11,
+      "element_type": "IFCWALL",
+      "element_name": "Wall B",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "NetVolume",
+      "quantity_type": "IFCQUANTITYVOLUME",
+      "kind": "volume",
+      "value": "3.0",
+      "unit": "m3",
+      "unit_source": "project_unit_assignment",
+      "source": "IFC_IfcElementQuantity"
+    }
+  ],
+  "findings": []
+}

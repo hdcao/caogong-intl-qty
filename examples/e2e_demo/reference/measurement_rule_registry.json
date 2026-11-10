@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "rules": [
+    {
+      "rule_id": "SIM-RULE-EW-01",
+      "title": "Roadway excavation geometric quantity",
+      "discipline": "Roads / drainage",
+      "jurisdiction": "SIMULATED_ONLY",
+      "source_document": "SIM-CONTRACT-001 / S-01 Rev.A",
+      "source_revision": "Rev.A synthetic fixture",
+      "contract_clause": "SIM-RULE-EW-01",
+      "effective_from": "2026-10-24",
+      "effective_to": null,
+      "measurement_basis": "DESIGN_THEORETICAL",
+      "unit": "m3",
+      "inclusion_rules": [
+        "Average design section area × length: 12.0 m2 × 100.0 m = 1200 m3"
+      ],
+      "exclusion_rules": [
+        "No over-excavation, swell, haulage or payment allowance included"
+      ],
+      "deduction_rules": [],
+      "rounding_policy": "Display 3 decimals for quantities; monetary calculation unrounded until report display (simulation only).",
+      "precedence_rank": 1,
+      "approval_status": "SIMULATION_ONLY_NOT_AUTHORIZED",
+      "approved_by": null,
+      "approved_at": null,
+      "test_case_ids": [
+        "SIM-POS-01",
+        "SIM-NEG-01"
+      ],
+      "notes": "Geometry intentionally simplified; actual earthworks require section-by-section measurements and contract rules."
+    },
+    {
+      "rule_id": "SIM-RULE-RD-02",
+      "title": "Granular subbase geometric volume",
+      "discipline": "Roads / drainage",
+      "jurisdiction": "SIMULATED_ONLY",
+      "source_document": "SIM-CONTRACT-001 / S-01 Rev.A",
+      "source_revision": "Rev.A synthetic fixture",
+      "contract_clause": "SIM-RULE-RD-02",
+      "effective_from": "2026-10-24",
+      "effective_to": null,
+      "measurement_basis": "DESIGN_THEORETICAL",
+      "unit": "m3",
+      "inclusion_rules": [
+        "8.0 m × 100.0 m × 0.20 m = 160 m3"
+      ],
+      "exclusion_rules": [
+        "No shrinkage, compaction factor or waste allowance included"
+      ],
+      "deduction_rules": [],
+      "rounding_policy": "Display 3 decimals for quantities; monetary calculation unrounded until report display (simulation only).",
+      "precedence_rank": 1,
+      "approval_status": "SIMULATION_ONLY_NOT_AUTHORIZED",
+      "approved_by": null,
+      "approved_at": null,
+      "test_case_ids": [
+        "SIM-POS-01",
+        "SIM-NEG-01"
+      ],
+      "notes": "Thickness is illustrative and must not be used as a real design parameter."
+    },
+    {
+      "rule_id": "SIM-RULE-RD-03",
+      "title": "Asphalt concrete geometric volume",
+      "discipline": "Roads / drainage",
+      "jurisdiction": "SIMULATED_ONLY",
+      "source_document": "SIM-CONTRACT-001 / S-01 Rev.A",
+      "source_revision": "Rev.A synthetic fixture",
+      "contract_clause": "SIM-RULE-RD-03",
+      "effective_from": "2026-10-24",
+      "effective_to": null,
+      "measurement_basis": "DESIGN_THEORETICAL",
+      "unit": "m3",
+      "inclusion_rules": [
+        "7.0 m × 100.0 m × 0.05 m = 35 m3"
+      ],
+      "exclusion_rules": [
+        "No density conversion, tonnage payment or waste allowance included"
+      ],
+      "deduction_rules": [],
+      "rounding_policy": "Display 3 decimals for quantities; monetary calculation unrounded until report display (simulation only).",
+      "precedence_rank": 1,
+      "approval_status": "SIMULATION_ONLY_NOT_AUTHORIZED",
+      "approved_by": null,
+      "approved_at": null,
+      "test_case_ids": [
+        "SIM-POS-01",
+        "SIM-NEG-01"
+      ],
+      "notes": "Many contracts pay asphalt by mass or another basis; this simulation deliberately uses geometric m3 and is not prescriptive."
+    },
+    {
+      "rule_id": "SIM-RULE-CV-04",
+      "title": "Box culvert concrete by distinct component",
+      "discipline": "Roads / drainage",
+      "jurisdiction": "SIMULATED_ONLY",
+      "source_document": "SIM-CONTRACT-001 / S-01 Rev.A",
+      "source_revision": "Rev.A synthetic fixture",
+      "contract_clause": "SIM-RULE-CV-04",
+      "effective_from": "2026-10-24",
+      "effective_to": null,
+      "measurement_basis": "DESIGN_THEORETICAL",
+      "unit": "m3",
+      "inclusion_rules": [
+        "Base slab 3.60 m3; two walls 3.60 m3; top slab 3.60 m3"
+      ],
+      "exclusion_rules": [
+        "No deductions for openings or intersections modelled; steel/formwork excluded"
+      ],
+      "deduction_rules": [],
+      "rounding_policy": "Display 3 decimals for quantities; monetary calculation unrounded until report display (simulation only).",
+      "precedence_rank": 1,
+      "approval_status": "SIMULATION_ONLY_NOT_AUTHORIZED",
+      "approved_by": null,
+      "approved_at": null,
+      "test_case_ids": [
+        "SIM-POS-01",
+        "SIM-NEG-01"
+      ],
+      "notes": "Components are coded separately to avoid overlap/double counting; verify dimensions and void rules in a real project."
+    },
+    {
+      "rule_id": "SIM-RULE-OPT-01",
+      "title": "Optional guardrail length",
+      "discipline": "Roads / drainage",
+      "jurisdiction": "SIMULATED_ONLY",
+      "source_document": "SIM-CONTRACT-001 / S-01 Rev.A",
+      "source_revision": "Rev.A synthetic fixture",
+      "contract_clause": "SIM-RULE-OPT-01",
+      "effective_from": "2026-10-24",
+      "effective_to": null,
+      "measurement_basis": "TENDER_BOQ",
+      "unit": "m",
+      "inclusion_rules": [
+        "Both sides: 2 × 100.0 m = 200 m"
+      ],
+      "exclusion_rules": [
+        "Excluded from base direct cost; priced separately as CPB 4.0 OPTIONS"
+      ],
+      "deduction_rules": [],
+      "rounding_policy": "Display 3 decimals for quantities; monetary calculation unrounded until report display (simulation only).",
+      "precedence_rank": 1,
+      "approval_status": "SIMULATION_ONLY_NOT_AUTHORIZED",
+      "approved_by": null,
+      "approved_at": null,
+      "test_case_ids": [
+        "SIM-POS-01",
+        "SIM-NEG-01"
+      ],
+      "notes": "Optional scope is intentionally separated to test option gating."
+    }
+  ]
+}

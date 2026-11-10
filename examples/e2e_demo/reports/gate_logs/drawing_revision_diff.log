@@ -1,0 +1,5 @@
+Revision comparison: 4 sheet IDs; changed=2; unchanged=2
+Impact mapping: CLOSED; blockers=0
+JSON: .\examples\e2e_demo\reports\revision_impact\drawing_revision_impact.json
+Markdown: .\examples\e2e_demo\reports\revision_impact\drawing_revision_impact.md
+PASS: all changed drawing IDs have a closed, evidence-backed quantity-impact disposition.

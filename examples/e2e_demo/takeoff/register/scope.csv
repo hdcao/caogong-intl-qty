@@ -1,0 +1,9 @@
+﻿field,value
+计量标准与合同类型,SIMULATED WORKS REQUIREMENTS S-01; remeasurement-style sample rules are synthetic and are not an adopted international standard.
+里程基准与起终点,Ch.0+000 to Ch.0+100; 100.0 m design centerline; sample geometry only.
+单位制与交付单位,SI; quantities use m3 for volume and m for length; rates use invented simulation values in SIM-CUR.
+编码体系,CBS is the quantity item key; CPB 1.0 = base scope; CPB 4.0 = optional alternative excluded from Base.
+图纸版本裁决规则,Use SIM-RD-CV-001 Rev.2 as the sole fixture drawing; new revisions trigger quantity impact analysis.
+推定层是否计入合计,Estimated optional guardrail remains separate and must not enter Base direct cost.
+工作包字典,WP-01 Road works; WP-02 Box culvert; WP-99 Optional alternatives.
+部位字典,Road Ch.0+000–0+100; one box culvert; full package scope is synthetic.

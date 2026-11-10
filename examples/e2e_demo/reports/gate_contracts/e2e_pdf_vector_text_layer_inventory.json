@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_PDF_VECTOR_TEXT_LAYER_INVENTORY",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf": "d0bff746ab93ef3364792b10c4023b404866108cde747b6857028541ffdc6a83",
+    "scripts/extract_dwg_vector.py": "18617fbfc20bd577b69c13c86fd4082bd9722d241402594a3e08457d4b542730"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "PDF vector/text layer inventory",
+      "command": [
+        "{python}",
+        "scripts/extract_dwg_vector.py",
+        "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf",
+        "--list"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 1.404,
+      "log": "examples/e2e_demo/reports/gate_logs/pdf_vector.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

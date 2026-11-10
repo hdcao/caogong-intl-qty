@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "SIM-E2E-OPENBIM-001",
+  "mapping_rules": [
+    {
+      "rule_id": "MAP-WALL-NET",
+      "status": "APPROVED",
+      "approved_by": "QS Lead",
+      "approved_at": "2026-10-29",
+      "source_document": "Tender Measurement Rules.pdf",
+      "source_clause": "Section 2.1",
+      "element_type": "IFCWALL",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "NetVolume",
+      "kind": "volume",
+      "boq_code": "C-001",
+      "boq_description": "Concrete wall volume",
+      "boq_unit": "m3"
+    }
+  ],
+  "approved_exclusions": [
+    {
+      "rule_id": "EX-WALL-GROSS",
+      "status": "APPROVED",
+      "approved_by": "QS Lead",
+      "approved_at": "2026-10-29",
+      "source_document": "Tender Measurement Rules.pdf",
+      "source_clause": "Section 2.2",
+      "reason": "Gross volume is retained for reference but is not a billable quantity in this BOQ",
+      "element_type": "IFCWALL",
+      "quantity_set": "Qto_WallBaseQuantities",
+      "quantity_name": "GrossVolume",
+      "kind": "volume"
+    }
+  ]
+}

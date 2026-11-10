@@ -1,0 +1,61 @@
+{
+  "note": "For gate_drawing_basis, use the same items; freshness fields are ignored. Synthetic only.",
+  "items": [
+    {
+      "code": "CBS-RD-001",
+      "qty": 1200.0,
+      "unit": "m3",
+      "basis": "SIM-RD-CV-001 Rev.2, longitudinal profile: average section area 12.0 m2 × 100.0 m",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    },
+    {
+      "code": "CBS-RD-002",
+      "qty": 160.0,
+      "unit": "m3",
+      "basis": "SIM-RD-CV-001 Rev.2, typical section A-A: 8.0 × 100.0 × 0.20 m",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    },
+    {
+      "code": "CBS-RD-003",
+      "qty": 35.0,
+      "unit": "m3",
+      "basis": "SIM-RD-CV-001 Rev.2, typical section A-A: 7.0 × 100.0 × 0.05 m",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    },
+    {
+      "code": "CBS-CV-004",
+      "qty": 3.6,
+      "unit": "m3",
+      "basis": "SIM-RD-CV-001 Rev.2, section B-B: base slab 4.0 × 3.0 × 0.30 m",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    },
+    {
+      "code": "CBS-CV-005",
+      "qty": 3.6,
+      "unit": "m3",
+      "basis": "SIM-RD-CV-001 Rev.2, section B-B: two walls 2 × 3.0 × 0.30 × 2.0 m",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    },
+    {
+      "code": "CBS-CV-006",
+      "qty": 3.6,
+      "unit": "m3",
+      "basis": "SIM-RD-CV-001 Rev.2, section B-B: top slab 4.0 × 3.0 × 0.30 m",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    },
+    {
+      "code": "CBS-OPT-001",
+      "qty": 200.0,
+      "unit": "m",
+      "basis": "SIM-RD-CV-001 Rev.2, plan: both sides × 100.0 m; optional CPB 4.0",
+      "asof": "2026-10-24",
+      "tolerance": 0.005
+    }
+  ]
+}

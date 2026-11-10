@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_ENVIRONMENT_PREFLIGHT",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "scripts/check_environment.py": "d867dc8bde5ac7757167a55e41bb5b7fbd215413d9256429c5e00c4b0f98e238"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Environment preflight",
+      "command": [
+        "{python}",
+        "scripts/check_environment.py",
+        "--json"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 2.494,
+      "log": "examples/e2e_demo/reports/gate_logs/environment.json",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

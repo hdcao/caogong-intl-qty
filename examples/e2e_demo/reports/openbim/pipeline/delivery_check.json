@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "tool": "ifc_delivery_check",
+  "profile_id": "SIM-IFC-QTO-PROFILE-001",
+  "project_id": "SIM-E2E-OPENBIM-001",
+  "status": "PASS",
+  "release_eligible": true,
+  "source_hashes": {
+    "qto": "f93527d184647fc6cc791bcde2b1be31f4e26a6ba93f6e22806fc632546fa512",
+    "profile": "549853cac45988237a0c23d61c9e72a0d5d37c757928b77576472402a92bbeae"
+  },
+  "scope_note": "IDS-inspired subset over extracted IFC QTO fields; this is not a full buildingSMART IDS schema/parser or geometric model validation.",
+  "metrics": {
+    "elements": 2,
+    "requirements": 1,
+    "failures": 0,
+    "warnings": 0
+  },
+  "findings": []
+}

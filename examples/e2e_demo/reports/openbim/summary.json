@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0.0",
+  "run_type": "SYNTHETIC_OPENBIM_QTO_WORKFLOW",
+  "project_id": "SIM-E2E-OPENBIM-001",
+  "status": "PASS",
+  "steps": [
+    {
+      "name": "extract_rev_a",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\ifc_qto_extract.py",
+        "extract",
+        "--file",
+        ".\\examples\\e2e_demo\\reference\\openbim\\model_rev_a.ifc",
+        "--out",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "duration_seconds": 1.253,
+      "log": "examples/e2e_demo/reports/openbim/extract_rev_a.log",
+      "output_tail": [
+        "IFC QTO extraction: PASS | elements=2 | quantities=3 | fail=0 warn=0",
+        "source_sha256=fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json"
+      ]
+    },
+    {
+      "name": "extract_rev_b",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\ifc_qto_extract.py",
+        "extract",
+        "--file",
+        ".\\examples\\e2e_demo\\reference\\openbim\\model_rev_b.ifc",
+        "--out",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_b_qto.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "duration_seconds": 1.203,
+      "log": "examples/e2e_demo/reports/openbim/extract_rev_b.log",
+      "output_tail": [
+        "IFC QTO extraction: PASS | elements=2 | quantities=3 | fail=0 warn=0",
+        "source_sha256=cd145d723185ac18114b12e66bcd2ef77ab4edb2230579c94811cf891dcb60ac",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\model_rev_b_qto.json"
+      ]
+    },
+    {
+      "name": "delivery_profile",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\ifc_delivery_check.py",
+        "check",
+        "--qto",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json",
+        "--profile",
+        ".\\examples\\e2e_demo\\reference\\openbim\\ifc_delivery_profile.json",
+        "--out",
+        ".\\examples\\e2e_demo\\reports\\openbim\\delivery_check.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "duration_seconds": 1.155,
+      "log": "examples/e2e_demo/reports/openbim/delivery_profile.log",
+      "output_tail": [
+        "IFC delivery profile: PASS | requirements=1 | failures=0",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\delivery_check.json"
+      ]
+    },
+    {
+      "name": "boq_mapping",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\boq_mapping.py",
+        "map",
+        "--qto",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json",
+        "--registry",
+        ".\\examples\\e2e_demo\\reference\\openbim\\boq_mapping_registry.json",
+        "--project-id",
+        "SIM-E2E-OPENBIM-001",
+        "--out",
+        ".\\examples\\e2e_demo\\reports\\openbim\\boq_mapping.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "duration_seconds": 1.08,
+      "log": "examples/e2e_demo/reports/openbim/boq_mapping.log",
+      "output_tail": [
+        "BOQ mapping: PASS | mapped=2 | excluded=1 | failures=0",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\boq_mapping.json"
+      ]
+    },
+    {
+      "name": "qto_diff_changed",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\ifc_qto_diff.py",
+        "compare",
+        "--baseline",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json",
+        "--current",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_b_qto.json",
+        "--out",
+        ".\\examples\\e2e_demo\\reports\\openbim\\qto_diff_revisions.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "status": "PASS",
+      "duration_seconds": 1.116,
+      "log": "examples/e2e_demo/reports/openbim/qto_diff_changed.log",
+      "output_tail": [
+        "IFC QTO diff: REVIEW_REQUIRED | added=0 removed=0 changed=1 not_comparable=0",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\qto_diff_revisions.json"
+      ]
+    },
+    {
+      "name": "qto_diff_unchanged",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\ifc_qto_diff.py",
+        "compare",
+        "--baseline",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json",
+        "--current",
+        ".\\examples\\e2e_demo\\reports\\openbim\\model_rev_a_qto.json",
+        "--out",
+        ".\\examples\\e2e_demo\\reports\\openbim\\qto_diff_same.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "duration_seconds": 1.07,
+      "log": "examples/e2e_demo/reports/openbim/qto_diff_unchanged.log",
+      "output_tail": [
+        "IFC QTO diff: NO_CHANGE | added=0 removed=0 changed=0 not_comparable=0",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\qto_diff_same.json"
+      ]
+    },
+    {
+      "name": "integrated_pipeline_review",
+      "command": [
+        "C:\\Users\\HW\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        ".\\scripts\\openbim_pipeline.py",
+        "run",
+        "--baseline-ifc",
+        ".\\examples\\e2e_demo\\reference\\openbim\\model_rev_a.ifc",
+        "--current-ifc",
+        ".\\examples\\e2e_demo\\reference\\openbim\\model_rev_b.ifc",
+        "--registry",
+        ".\\examples\\e2e_demo\\reference\\openbim\\boq_mapping_registry.json",
+        "--profile",
+        ".\\examples\\e2e_demo\\reference\\openbim\\ifc_delivery_profile.json",
+        "--project-id",
+        "SIM-E2E-OPENBIM-001",
+        "--out-dir",
+        ".\\examples\\e2e_demo\\reports\\openbim\\pipeline"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "status": "PASS",
+      "duration_seconds": 1.342,
+      "log": "examples/e2e_demo/reports/openbim/integrated_pipeline_review.log",
+      "output_tail": [
+        "OpenBIM pipeline: REVIEW_REQUIRED | release_eligible=False | stages=5",
+        "report=.\\examples\\e2e_demo\\reports\\openbim\\pipeline\\pipeline_summary.json"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check": "delivery_profile",
+      "expected": "PASS",
+      "actual": "PASS",
+      "status": "PASS"
+    },
+    {
+      "check": "boq_mapping",
+      "expected": "PASS",
+      "actual": "PASS",
+      "status": "PASS"
+    },
+    {
+      "check": "changed_diff",
+      "expected": "REVIEW_REQUIRED",
+      "actual": "REVIEW_REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "check": "unchanged_diff",
+      "expected": "NO_CHANGE",
+      "actual": "NO_CHANGE",
+      "status": "PASS"
+    },
+    {
+      "check": "integrated_pipeline_review",
+      "expected": "REVIEW_REQUIRED",
+      "actual": "REVIEW_REQUIRED",
+      "status": "PASS"
+    }
+  ],
+  "input_hashes_before": {
+    "examples\\e2e_demo\\reference\\openbim\\model_rev_a.ifc": "fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4",
+    "examples\\e2e_demo\\reference\\openbim\\model_rev_b.ifc": "cd145d723185ac18114b12e66bcd2ef77ab4edb2230579c94811cf891dcb60ac",
+    "examples\\e2e_demo\\reference\\openbim\\boq_mapping_registry.json": "6c514e4852f20876449b925433bb901ae8e468dbcfca89782e697d86b6bb23ac",
+    "examples\\e2e_demo\\reference\\openbim\\ifc_delivery_profile.json": "549853cac45988237a0c23d61c9e72a0d5d37c757928b77576472402a92bbeae"
+  },
+  "input_hashes_after": {
+    "examples\\e2e_demo\\reference\\openbim\\model_rev_a.ifc": "fbd6cca64cdd493abd37e4c79343c099719a9fa0b6ebf9da4fa1d51de648d3b4",
+    "examples\\e2e_demo\\reference\\openbim\\model_rev_b.ifc": "cd145d723185ac18114b12e66bcd2ef77ab4edb2230579c94811cf891dcb60ac",
+    "examples\\e2e_demo\\reference\\openbim\\boq_mapping_registry.json": "6c514e4852f20876449b925433bb901ae8e468dbcfca89782e697d86b6bb23ac",
+    "examples\\e2e_demo\\reference\\openbim\\ifc_delivery_profile.json": "549853cac45988237a0c23d61c9e72a0d5d37c757928b77576472402a92bbeae"
+  },
+  "input_sources_unchanged": true,
+  "scope_note": "Synthetic IFC STEP quantities only. No geometry recomputation, PDF/CAD visual diff, full IDS parser or contract measurement approval is implied. Integrated pipeline keeps changed QTO at REVIEW_REQUIRED and never auto-approves it."
+}

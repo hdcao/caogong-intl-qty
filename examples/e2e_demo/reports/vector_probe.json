@@ -1,0 +1,66 @@
+{
+  "tool": "vector_forensics.probe",
+  "version": "3.2.0",
+  "pdf": ".\\examples\\e2e_demo\\input\\drawings\\RD123456-SIM-RD-CV-001-REV2.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "width_pt": 1190.6,
+      "height_pt": 841.9,
+      "rotation": 0,
+      "text_len": 1015,
+      "fonts": [
+        "Helvetica",
+        "Helvetica-Bold"
+      ],
+      "drawings": 22,
+      "rect_items": 6,
+      "line_items": 16,
+      "kind": "vector_with_text (完整文字层)",
+      "route": "文本层解析（最快最准）",
+      "fill_top": [],
+      "size_top": [
+        {
+          "w": 1133.9,
+          "h": 785.2,
+          "n": 1
+        },
+        {
+          "w": 496.1,
+          "h": 39.7,
+          "n": 1
+        },
+        {
+          "w": 158.7,
+          "h": 102.0,
+          "n": 1
+        },
+        {
+          "w": 134.9,
+          "h": 78.2,
+          "n": 1
+        },
+        {
+          "w": 354.3,
+          "h": 70.9,
+          "n": 1
+        },
+        {
+          "w": 623.6,
+          "h": 45.4,
+          "n": 1
+        }
+      ],
+      "angle_top": [
+        {
+          "deg": 90,
+          "n": 11
+        },
+        {
+          "deg": 0,
+          "n": 5
+        }
+      ]
+    }
+  ]
+}

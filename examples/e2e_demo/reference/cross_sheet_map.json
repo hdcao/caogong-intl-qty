@@ -1,0 +1,104 @@
+{
+  "note": "Quantity rows compared to a synthetic independent schedule; each pair is a hard-value comparison, not proof of formula linkage or full source independence.",
+  "stale_ok": false,
+  "coverage": {
+    "sheet": "1_成本取量总表",
+    "code_col": 2,
+    "min_coverage": 1.0,
+    "exclude": []
+  },
+  "pairs": [
+    {
+      "name": "CBS-RD-001",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E3"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D2"
+      },
+      "mode": "either",
+      "tol": 0.001
+    },
+    {
+      "name": "CBS-RD-002",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E4"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D3"
+      },
+      "mode": "either",
+      "tol": 0.001
+    },
+    {
+      "name": "CBS-RD-003",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E5"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D4"
+      },
+      "mode": "either",
+      "tol": 0.001
+    },
+    {
+      "name": "CBS-CV-004",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E6"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D5"
+      },
+      "mode": "either",
+      "tol": 0.001
+    },
+    {
+      "name": "CBS-CV-005",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E7"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D6"
+      },
+      "mode": "either",
+      "tol": 0.001
+    },
+    {
+      "name": "CBS-CV-006",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E8"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D7"
+      },
+      "mode": "either",
+      "tol": 0.001
+    },
+    {
+      "name": "CBS-OPT-001",
+      "a": {
+        "sheet": "1_成本取量总表",
+        "cell": "E11"
+      },
+      "b": {
+        "sheet": "2_独立复核清单",
+        "cell": "D8"
+      },
+      "mode": "either",
+      "tol": 0.001
+    }
+  ],
+  "sums": []
+}

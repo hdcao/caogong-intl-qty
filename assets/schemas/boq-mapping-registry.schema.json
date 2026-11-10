@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caogong.example/schemas/boq-mapping-registry.schema.json",
+  "title": "Governed IFC quantity to BOQ mapping registry",
+  "type": "object",
+  "required": ["schema_version", "project_id", "mapping_rules", "approved_exclusions"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "project_id": {"type": "string", "minLength": 1},
+    "mapping_rules": {"type": "array", "items": {"$ref": "#/$defs/mappingRule"}},
+    "approved_exclusions": {"type": "array", "items": {"$ref": "#/$defs/exclusionRule"}}
+  },
+  "$defs": {
+    "selectors": {
+      "type": "object",
+      "required": ["element_type", "quantity_set", "quantity_name", "kind"],
+      "properties": {"element_type": {"type": "string"}, "quantity_set": {"type": "string"}, "quantity_name": {"type": "string"}, "kind": {"enum": ["length", "area", "volume", "mass", "count", "time", "*"]}},
+      "additionalProperties": true
+    },
+    "mappingRule": {
+      "allOf": [{"$ref": "#/$defs/selectors"}],
+      "required": ["rule_id", "status", "approved_by", "approved_at", "source_document", "source_clause", "boq_code", "boq_unit"],
+      "properties": {"rule_id": {"type": "string", "minLength": 1}, "status": {"const": "APPROVED"}, "approved_by": {"type": "string", "minLength": 1}, "approved_at": {"type": "string", "format": "date"}, "source_document": {"type": "string", "minLength": 1}, "source_clause": {"type": "string", "minLength": 1}, "boq_code": {"type": "string", "minLength": 1}, "boq_description": {"type": "string"}, "boq_unit": {"type": "string", "minLength": 1}}
+    },
+    "exclusionRule": {
+      "allOf": [{"$ref": "#/$defs/selectors"}],
+      "required": ["rule_id", "status", "approved_by", "approved_at", "source_document", "source_clause", "reason"],
+      "properties": {"rule_id": {"type": "string", "minLength": 1}, "status": {"const": "APPROVED"}, "approved_by": {"type": "string", "minLength": 1}, "approved_at": {"type": "string", "format": "date"}, "source_document": {"type": "string", "minLength": 1}, "source_clause": {"type": "string", "minLength": 1}, "reason": {"type": "string", "minLength": 1}}
+    }
+  }
+}

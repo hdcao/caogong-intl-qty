@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:caogong-intl-qty:gate-result.schema.json",
+  "title": "QTO Standard Gate Result Contract",
+  "type": "object",
+  "required": ["schema_version", "gate_id", "status", "executed", "checked_count", "expected_count", "skipped_count", "tool_version", "rule_version", "input_hashes", "metrics", "issues"],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "gate_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["NOT_RUN", "PASS", "WARN", "FAIL", "ERROR"]},
+    "executed": {"type": "boolean"},
+    "checked_count": {"type": ["integer", "null"], "minimum": 0},
+    "expected_count": {"type": ["integer", "null"], "minimum": 0},
+    "skipped_count": {"type": "integer", "minimum": 0},
+    "tool_version": {"type": ["string", "null"]},
+    "rule_version": {"type": ["string", "null"]},
+    "input_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "metrics": {"type": "object"},
+    "issues": {"type": "array", "items": {"type": "object", "required": ["code", "severity", "message"], "properties": {"code": {"type": "string"}, "severity": {"enum": ["INFO", "WARN", "FAIL", "ERROR"]}, "message": {"type": "string"}, "location": {"type": ["string", "null"]}, "item_id": {"type": ["string", "null"]}}, "additionalProperties": true}}
+  },
+  "additionalProperties": true
+}

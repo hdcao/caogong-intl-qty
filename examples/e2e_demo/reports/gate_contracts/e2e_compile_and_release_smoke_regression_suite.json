@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.1.0",
+  "gate_id": "E2E_COMPILE_AND_RELEASE_SMOKE_REGRESSION_SUITE",
+  "status": "PASS",
+  "executed": true,
+  "checked_count": null,
+  "expected_count": null,
+  "skipped_count": 0,
+  "tool_version": "E2E-HARNESS-1.0.0",
+  "rule_version": "QTO-RELEASE-SMOKE-V12",
+  "input_hashes": {
+    "scripts/test_all.py": "4d2fb190fb188e40648796b06c5e071664ee51bb483359e8cde9b5cc99798d3a"
+  },
+  "metrics": {
+    "runner": {
+      "step_name": "Compile and release smoke/regression suite",
+      "command": [
+        "{python}",
+        "scripts/test_all.py"
+      ],
+      "process_exit_code": 0,
+      "duration_seconds": 35.326,
+      "log": "examples/e2e_demo/reports/gate_logs/test_all.log",
+      "source_tree_sha256": "a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58",
+      "legacy_gate_checked_count_unreported": true
+    }
+  },
+  "issues": []
+}

@@ -1,0 +1,62 @@
+{
+  "register_status": "CONFIRMED",
+  "project": "SIM-E2E-001",
+  "drawing_set_rev": "SIM-RD-CV-001 Rev.2 (synthetic)",
+  "generated_at": "2026-11-02T15:08:36",
+  "drawings": [
+    {
+      "sheet": "SIM-RD-CV-001",
+      "title": "Synthetic Access Road and Box Culvert Layout / Sections",
+      "discipline": "Roads / Drainage",
+      "work_package": "WP-01 Road; WP-02 Box Culvert",
+      "part": "Ch.0+000 to Ch.0+100; one box culvert",
+      "rev": "2",
+      "date": "2026-10-24",
+      "scale": "NTS (illustrative)",
+      "source_type": "pdf",
+      "file": "examples/e2e_demo/input/drawings/RD123456-SIM-RD-CV-001-REV2.pdf",
+      "sha256": "d0bff746ab93ef3364792b10c4023b404866108cde747b6857028541ffdc6a83",
+      "scope_status": "full",
+      "superseded_by": "",
+      "blocks": "",
+      "confirmed_by": "SIM-REVIEW-01 (synthetic test fixture only)",
+      "status": "confirmed",
+      "notes": "Synthetic input for software test only; not an issued drawing; confirm real authority before real-project use."
+    }
+  ],
+  "scope": [
+    {
+      "field": "计量标准与合同类型",
+      "value": "SIMULATED WORKS REQUIREMENTS S-01; remeasurement-style sample rules are synthetic and are not an adopted international standard."
+    },
+    {
+      "field": "里程基准与起终点",
+      "value": "Ch.0+000 to Ch.0+100; 100.0 m design centerline; sample geometry only."
+    },
+    {
+      "field": "单位制与交付单位",
+      "value": "SI; quantities use m3 for volume and m for length; rates use invented simulation values in SIM-CUR."
+    },
+    {
+      "field": "编码体系",
+      "value": "CBS is the quantity item key; CPB 1.0 = base scope; CPB 4.0 = optional alternative excluded from Base."
+    },
+    {
+      "field": "图纸版本裁决规则",
+      "value": "Use SIM-RD-CV-001 Rev.2 as the sole fixture drawing; new revisions trigger quantity impact analysis."
+    },
+    {
+      "field": "推定层是否计入合计",
+      "value": "Estimated optional guardrail remains separate and must not enter Base direct cost."
+    },
+    {
+      "field": "工作包字典",
+      "value": "WP-01 Road works; WP-02 Box culvert; WP-99 Optional alternatives."
+    },
+    {
+      "field": "部位字典",
+      "value": "Road Ch.0+000–0+100; one box culvert; full package scope is synthetic."
+    }
+  ],
+  "open_items": []
+}

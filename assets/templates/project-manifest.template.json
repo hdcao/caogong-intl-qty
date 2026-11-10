@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "unit_alias_registry_file": "takeoff/register/unit_alias_registry.json",
+  "project": {
+    "project_id": "TO_BE_ASSIGNED",
+    "project_name": "TO_BE_CONFIRMED",
+    "country_or_jurisdiction": "TO_BE_CONFIRMED",
+    "discipline": "TO_BE_CONFIRMED",
+    "package_or_work_section": "TO_BE_CONFIRMED",
+    "prepared_by": "TO_BE_CONFIRMED",
+    "prepared_at": null,
+    "status": "DRAFT"
+  },
+  "scope": {
+    "included": [],
+    "excluded": [],
+    "assumptions_register": "takeoff/register/assumptions.csv",
+    "scope_confirmation_reference": null
+  },
+  "contract_and_measurement": {
+    "contract_id": "TO_BE_CONFIRMED",
+    "contract_document_revision": "TO_BE_CONFIRMED",
+    "measurement_standard": "TO_BE_CONFIRMED",
+    "measurement_standard_version": "TO_BE_CONFIRMED",
+    "project_specific_amendments": [],
+    "rule_registry_file": "takeoff/register/measurement_rule_registry.json",
+    "approval_status": "DRAFT",
+    "approved_by": null,
+    "approved_at": null
+  },
+  "drawing_baseline": {
+    "register_file": "takeoff/register/drawings_seed.csv",
+    "register_status": "NOT_CONFIRMED",
+    "baseline_id": null,
+    "baseline_created_at": null
+  },
+  "quantity_basis_policy": {
+    "allowed_bases": [
+      "DESIGN_THEORETICAL",
+      "CONTRACT_MEASURED",
+      "TENDER_BOQ",
+      "SITE_CLAIMED",
+      "CERTIFIED_PAYMENT"
+    ],
+    "default_basis": null,
+    "rounding_policy_reference": null,
+    "unit_system": "TO_BE_CONFIRMED"
+  },
+  "quality_policy": {
+    "critical_items_require_evidence": true,
+    "overall_coverage_threshold_is_not_sufficient_for_release": true,
+    "mandatory_gates": [],
+    "accepted_open_items": [],
+    "release_authority": null
+  },
+  "software_baseline": {
+    "skill_version": "4.6.5",
+    "python_version": "TO_BE_RECORDED",
+    "environment_report": null,
+    "source_revision_or_package_hash": null
+  }
+}

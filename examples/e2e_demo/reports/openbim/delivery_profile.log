@@ -1,0 +1,2 @@
+IFC delivery profile: PASS | requirements=1 | failures=0
+report=.\examples\e2e_demo\reports\openbim\delivery_check.json

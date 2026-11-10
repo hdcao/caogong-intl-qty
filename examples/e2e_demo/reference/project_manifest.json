@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "project": {
+    "project_id": "SIM-E2E-001",
+    "project_name": "Synthetic Access Road & Box Culvert",
+    "country_or_jurisdiction": "SIMULATED - no real jurisdiction",
+    "discipline": "Roads / drainage",
+    "package_or_work_section": "100 m access road + one box culvert",
+    "prepared_by": "Automated E2E fixture generator (not a QS or approving authority)",
+    "prepared_at": "2026-10-24",
+    "status": "SIMULATION_ONLY"
+  },
+  "unit_alias_registry_file": "reference/unit_alias_registry.json",
+  "scope": {
+    "included": [
+      "Roadway excavation: 1,200 m3",
+      "Granular subbase: 160 m3",
+      "Asphalt concrete: 35 m3",
+      "Box culvert concrete: 10.8 m3 (base/walls/top slab separately coded)",
+      "Optional guardrail: 200 m, separate CPB 4.0 optional line"
+    ],
+    "excluded": [
+      "reinforcement steel",
+      "formwork",
+      "dewatering",
+      "haul/disposal beyond geometric excavation",
+      "temporary works",
+      "taxes, escalation and payment adjustments"
+    ],
+    "assumptions_register": "reference/assumptions.csv",
+    "scope_confirmation_reference": "SIM-REQ-S-01 (synthetic only)"
+  },
+  "contract_and_measurement": {
+    "contract_id": "SIM-CONTRACT-001",
+    "contract_document_revision": "S-01 / Rev.A (synthetic only)",
+    "measurement_standard": "Project-specific simulation rules; no external standard adopted",
+    "measurement_standard_version": "SIM-RULESET-1.0",
+    "project_specific_amendments": [
+      "Optional guardrail CPB 4.0 is excluded from base offer.",
+      "Theoretical geometry does not equal measured/certified payment by itself."
+    ],
+    "rule_registry_file": "reference/measurement_rule_registry.json",
+    "approval_status": "SIMULATION_ONLY_NOT_AUTHORIZED",
+    "approved_by": null,
+    "approved_at": null
+  },
+  "drawing_baseline": {
+    "register_file": "takeoff/register/scan/drawings_seed.csv",
+    "register_status": "SIMULATION_ONLY",
+    "baseline_id": "SIM-RD-CV-001-REV2",
+    "baseline_created_at": "2026-10-24T16:30:00Z"
+  },
+  "quantity_basis_policy": {
+    "allowed_bases": [
+      "DESIGN_THEORETICAL",
+      "CONTRACT_MEASURED",
+      "TENDER_BOQ",
+      "SITE_CLAIMED",
+      "CERTIFIED_PAYMENT"
+    ],
+    "default_basis": null,
+    "rounding_policy_reference": "SIM-RULESET-1.0: quantities 3 decimals in demo; this is not a real contract rule",
+    "unit_system": "SI; synthetic test fixture"
+  },
+  "quality_policy": {
+    "critical_items_require_evidence": true,
+    "overall_coverage_threshold_is_not_sufficient_for_release": true,
+    "mandatory_gates": [
+      "G-SCOPE",
+      "G-DRAWING-BASIS",
+      "G-FRESH",
+      "G-OWN",
+      "G-UNIT",
+      "G-DW",
+      "G-XS",
+      "G-XST",
+      "G-PROP",
+      "G-FORMULA",
+      "MODEL-2D",
+      "PDF-VECTOR"
+    ],
+    "accepted_open_items": [],
+    "release_authority": null
+  },
+  "software_baseline": {
+    "skill_version": "4.6.5",
+    "python_version": "recorded in run report",
+    "environment_report": "reports/environment.json",
+    "source_revision_or_package_hash": "recorded at runtime"
+  }
+}

@@ -1,0 +1,158 @@
+SOURCE TREE SHA256: a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58
+
+=== compileall ===
+
+=== shared numeric core ===
+
+=== adversarial domain regressions ===
+
+[PASS] exit=0 (1.1s)
+
+=== OpenBIM QTO / BOQ / delivery profile / snapshot diff regressions ===
+----------------------------------------------------------------------
+Ran 13 tests in 0.081s
+
+OK (skipped=1)
+[PASS] exit=0 (2.6s)
+PASS one-command OpenBIM pipeline passes unchanged, fully governed synthetic model
+SKIP validates integrated pipeline output against its JSON Schema (jsonschema not installed; pip install jsonschema to enable)
+PASS one-command OpenBIM pipeline requires review when model quantities change
+OPENBIM QTO REGRESSION RESULT: 30/30 passed
+[PASS] exit=0 (2.3s)
+----------------------------------------------------------------------
+Ran 20 tests in 24.218s
+
+OK (skipped=1)
+[PASS] exit=0 (25.5s)
+
+=== CLI smoke: boq_mapping.py ===
+
+=== CLI smoke: drafter_qto.py ===
+
+=== CLI smoke: drawing_revision_diff.py ===
+
+=== CLI smoke: gate_unit_consistency.py ===
+
+=== CLI smoke: ifc_delivery_check.py ===
+
+=== CLI smoke: ifc_qto_diff.py ===
+    verify              开项清单 CSV 与配套文档的编号同步校验
+
+options:
+  -h, --help            show this help message and exit
+[PASS] exit=0 (1.5s)
+
+=== CLI smoke: ifc_qto_extract.py ===
+    selftest        check CLI entrypoint
+
+options:
+  -h, --help        show this help message and exit
+[PASS] exit=0 (2.1s)
+
+=== CLI smoke: openbim_pipeline.py ===
+    selftest      small CLI selftest; full cases live in test_openbim_qto.py
+
+options:
+  -h, --help      show this help message and exit
+[PASS] exit=0 (2.1s)
+
+=== CLI smoke: project_orchestrator.py ===
+              closure
+
+options:
+  -h, --help  show this help message and exit
+[PASS] exit=0 (2.8s)
+
+=== CLI smoke: qto_project_validate.py ===
+                        Project ID required when using the project unit
+                        registry
+  --ack ACK             ACK 台账 CSV（gate,table,sheet,row,expect,reason,date,by）
+                        。只对**已人工确认且理由可核查**的条目放行；不传则所有 WARN 照常报出
+[PASS] exit=0 (3.0s)
+
+=== CLI smoke: xcheck_model_vs_2d.py ===
+    selftest          check CLI entrypoint
+
+options:
+  -h, --help          show this help message and exit
+[PASS] exit=0 (3.3s)
+    selftest          run synthetic IFC quantity extraction selftest
+
+options:
+  -h, --help          show this help message and exit
+[PASS] exit=0 (2.3s)
+    selftest      verify orchestration entry point
+
+options:
+  -h, --help      show this help message and exit
+[PASS] exit=0 (2.0s)
+    selftest            全流程自证
+
+options:
+  -h, --help            show this help message and exit
+[PASS] exit=0 (2.1s)
+  --json-out JSON_OUT   Write machine-readable GateResult JSON
+  --as-of AS_OF         Evaluation date YYYY-MM-DD; defaults to the local
+                        current date
+  --selftest            Run deterministic positive/negative self-tests
+[PASS] exit=0 (1.8s)
+  --unit-registry UNIT_REGISTRY
+                        经批准的项目单位别名注册表 JSON；仅用于显式项目约定单位
+  --project-id PROJECT_ID
+                        项目编号；使用 --unit-registry 时必填
+[PASS] exit=0 (2.1s)
+
+=== drafter catalog synchronization ===
+
+=== dimension wording selftest ===
+
+=== IFC structure validation selftest ===
+
+=== IFC QTO extraction selftest ===
+
+=== project manifest/rule/unit registry selftest ===
+
+=== dimension chain gate selftest ===
+
+=== cross-drawing consistency gate selftest ===
+
+=== render tiles manifest selftest ===
+------------------------------------------------------------------------------
+文档引用=88  清单条目=88  未展开=0
+==============================================================================
+结论: PASS
+[PASS] exit=0 (1.5s)
+[PASS] IFC-07（毫米单位+米制深度）被捕获：长度单位声明为毫米，但挤出深度中位数 16.5（疑似按米建模）：若几何确为米，模型在查看器中会缩小 1000 倍，近乎不可见
+[PASS] IFC-08（GUID 重复）被捕获：1 组重复 GUID（同名元素哈希撞车，需加序号盐）：g0000000000000000000008×2
+[PASS] 未转义中文被捕获
+SELFTEST: PASS （临时目录： D:\Temp\ifcval_8552g54j ）
+[PASS] exit=0 (1.7s)
+  [符合] 退出码 只有不可比 → 2                  → 2（期望 2）
+
+SELFTEST 34/34（含 3 条反向断言 + 2 条未填识别 + 5 条退出码断言）
+SELFTEST PASS
+[PASS] exit=0 (2.0s)
+[OK] classify 按腹板宽/底翼缘分档：梁身 ['A-A', 'B-B'] / 过渡 ['C-C'] / 填实 ['D-D', 'E-E']，组内同质且组间单调
+[OK] 判别量测错（全同值）→ 报警：断面·梁身组同质、断面·过渡组非空、断面·填实组非空
+
+SELFTEST: PASS
+[PASS] exit=0 (2.1s)
+PASS ifc_qto_extract selftest: IFC ElementQuantity, project units, provenance, JSON output
+[PASS] exit=0 (2.7s)
+  [符合] 9 宫格中心块有 4 个邻居                           → 4
+
+SELFTEST 20/20
+SELFTEST PASS
+[PASS] exit=0 (2.8s)
+SELFTEST: PASS (manifest/rule validation, version drift, duplicate IDs, ambiguous units)
+[PASS] exit=0 (2.8s)
+捕获率 = 4/4 = 100%
+合法行（应零发现）= 3 行 [6, 7, 8]
+[OK] 合法行 0 误报（含量单位 kg/m³、文本长度词 1.05m、正当复述均未被指证）
+结论: PASS
+[PASS] exit=0 (2.9s)
+SOURCE TREE SHA256: a8a8d21f5b2459dc7d3160eee73f088d5c11083128815d043501e12753cf7a58
+SOURCE TREE UNCHANGED: True
+
+RELEASE SMOKE RESULT: 23/23 passed (suite=QTO-RELEASE-SMOKE-V12)
+PASS: smoke/regression suite passed. This is not a substitute for project-specific end-to-end validation.

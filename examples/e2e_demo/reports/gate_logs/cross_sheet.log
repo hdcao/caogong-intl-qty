@@ -1,0 +1,12 @@
+跨表一致性门禁 G-XS | 表：quantity_takeoff.xlsx | 映射 7 对 / 0 组区间
+[PASS] G-XS3 CBS-RD-001：两侧一致 1200.00
+[PASS] G-XS3 CBS-RD-002：两侧一致 160.00
+[PASS] G-XS3 CBS-RD-003：两侧一致 35.00
+[PASS] G-XS3 CBS-CV-004：两侧一致 3.60
+[PASS] G-XS3 CBS-CV-005：两侧一致 3.60
+[PASS] G-XS3 CBS-CV-006：两侧一致 3.60
+[PASS] G-XS3 CBS-OPT-001：两侧一致 200.00
+[PASS] G-XSC3 映射覆盖全部 7 个编码（exclude 0 个）
+——
+一致 8 / 共 8 项；硬写死格 14 个
+== 跨表一致性门禁通过 ==
